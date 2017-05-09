@@ -1,0 +1,9 @@
+.tabMenuOff {
+	background-image: url(./images/ttplain/ttMenuOff.png);
+	background-repeat: repeat-x;
+}
+
+.tabMenuOn {
+	background-image: url(./images/ttplain/ttMenuOn.png);
+	background-repeat: repeat-x;
+}

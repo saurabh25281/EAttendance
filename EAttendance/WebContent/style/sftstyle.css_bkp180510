@@ -1,0 +1,357 @@
+.screenhead
+{
+    COLOR: #ff9600;
+    FONT-FAMILY: Verdana, Arial , 'Times New Roman';
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    TEXT-TRANSFORM: capitalize;
+    cellpadding: "2";
+    cellspacing: "0"
+}
+   .minibtn{
+   color:444;
+   font-family:Verdana,Arial;
+   font-size:10;
+   font-weight:bold;
+   background-color:#fed;
+   border:1px solid;
+   border-top-color:#696;
+   border-left-color:#696;
+   border-right-color:#363;
+   border-bottom-color:#363;
+   filter:progid:DXImageTransform.Microsoft.Gradient
+      (GradientType=0,StartColorStr='#ffffffff',EndColorStr='#ffE2E2E2');
+	  }
+
+	  .minibtn1{
+	  display: none;
+   color:444;
+   font-family:Verdana,Arial;
+   font-size:10;
+   font-weight:bold;
+   background-color:#fed;
+   border:1px solid;
+   border-top-color:#696;
+   border-left-color:#696;
+   border-right-color:#363;
+   border-bottom-color:#363;
+   filter:progid:DXImageTransform.Microsoft.Gradient
+      (GradientType=0,StartColorStr='#ffffffff',EndColorStr='#ffE2E2E2');
+	  }
+
+.screenContent
+{
+    BACKGROUND-COLOR: #fdf8f2;
+    FONT-FAMILY: Verdana,Arial , 'Times New Roman';
+    FONT-SIZE: 8pt
+}
+.ProjectName
+{
+    COLOR: white;
+    FONT-FAMILY: Verdana,Arial , 'Times New Roman';
+    FONT-SIZE: 18pt;
+    FONT-WEIGHT: bold;
+    TEXT-TRANSFORM: capitalize;
+    cellpadding: "2";
+    cellspacing: "0"
+}
+.headerheight
+{
+    BACKGROUND-COLOR: transparent;
+    HEIGHT: 25px
+}
+.menuback
+{
+    BACKGROUND-COLOR: transparent;
+    FONT-FAMILY: Verdana,Arial , 'Times New Roman';
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: bold
+}
+.tableheader
+{
+    BACKGROUND-COLOR: #7386bf;
+    BORDER-BOTTOM: #7386c6;
+    BORDER-LEFT: #7386c6;
+    BORDER-RIGHT: #7386c6;
+    BORDER-TOP: #7386c6;
+    COLOR: white;
+    FONT-FAMILY: Verdana,Arial , 'Times New Roman';
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: bold;
+    HEIGHT: 20pt;
+    cellpadding: "0";
+    cellspacing: "0"
+}
+.simple
+{
+    BACKGROUND-COLOR: white;
+    COLOR: black;
+    FONT-FAMILY: Verdana,Arial , 'Times New Roman';
+    FONT-SIZE: 9pt;
+    FONT-WEIGHT: normal
+}
+.rowhighlight
+{
+    BACKGROUND-COLOR: #d15c00;
+    FONT-FAMILY: Verdana,Arial , 'Times New Roman';
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: normal
+}
+.rowdiff
+{
+    BACKGROUND-COLOR: #c0bdf9;
+    FONT-FAMILY: Verdana,Arial , 'Times New Roman';
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: normal
+}
+.display
+{
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial , 'Times New Roman';
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    align: right
+}
+.rowdehighlight
+{
+    BACKGROUND-COLOR: #d5eaff;
+    FONT-FAMILY: Verdana, Arial , 'Times New Roman';
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: normal
+}
+.menu
+{
+    COLOR: black;
+    CURSOR: default;
+    FONT-FAMILY: Verdana, Arial , 'Times New Roman';
+    FONT-SIZE: 10pt;
+    TEXT-DECORATION: none
+}
+.dismenu
+{
+    COLOR: gray;
+    CURSOR: default;
+    FONT-FAMILY: Verdana, Arial , 'Times New Roman';
+    FONT-SIZE: 10pt;
+    TEXT-DECORATION: none
+}
+.whitehead
+{
+    BACKGROUND-COLOR: white;
+    COLOR: black;
+    CURSOR: default;
+    FONT-FAMILY: Verdana,Arial , 'Times New Roman';
+    FONT-SIZE: 10pt;
+    TEXT-DECORATION: none
+}
+.labelHeader
+{
+    COLOR: #007162;
+    FONT-FAMILY: Verdana,Arial;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold
+}
+.label
+{
+    FONT-FAMILY:Verdana, Arial , 'Times New Roman' ;
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: bold;
+    PADDING-LEFT: 3px;
+    align: center
+}
+.labelCol
+{
+	COLOR: #000000;
+	FONT-FAMILY:Verdana, Arial , 'Times New Roman' ;
+    FONT-SIZE: 8pt;
+	/*FONT-WEIGHT: bold;*/
+    PADDING-LEFT: 3px;
+    align: center
+	line-height:10px;
+}
+.labelCol a
+{
+	COLOR: #000000;
+	FONT-FAMILY:Verdana, Arial , 'Times New Roman' ;
+    FONT-SIZE: 8pt;
+	/*FONT-WEIGHT: bold;*/
+    PADDING-LEFT: 3px;
+    align: center
+	line-height:10px;
+	text-decoration:none;
+}
+.labelCol a:hover
+{
+	COLOR: #000000;
+	FONT-FAMILY:Verdana, Arial , 'Times New Roman' ;
+    FONT-SIZE: 8pt;
+	/*FONT-WEIGHT: bold;*/
+    PADDING-LEFT: 3px;
+    align: center
+	line-height:10px;
+	text-decoration:underline;
+}
+.LightBGW
+{
+	COLOR: #330099;
+	FONT-FAMILY:Verdana, Arial , 'Times New Roman' ;
+    FONT-SIZE: 9pt;
+	FONT-WEIGHT: bold;
+    PADDING-LEFT: 3px;
+    align: center
+}
+.labelrecon
+{
+    FONT-FAMILY:Verdana, Arial , 'Times New Roman';
+    FONT-SIZE: 8pt;
+    PADDING-LEFT: 3px;
+    align: center
+}
+.Mandatory
+{
+    BACKGROUND-COLOR: transparent;
+    BORDER-BOTTOM: black thin solid;
+    BORDER-LEFT: black thin solid;
+    BORDER-RIGHT: black thin solid;
+    BORDER-TOP: black thin solid;
+    COLOR: black;
+    FONT-FAMILY: Verdana,Arial , 'Times New Roman';
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: normal
+}
+.ctrl
+{
+    BACKGROUND-COLOR: transparent;
+    BORDER-BOTTOM: black thin solid;
+    BORDER-LEFT: black thin solid;
+    BORDER-RIGHT: black thin solid;
+    BORDER-TOP: black thin solid;
+    FONT-FAMILY: Verdana,Arial , 'Times New Roman';
+    FONT-SIZE: 8pt
+}
+.ctrlLogin
+{
+    BACKGROUND-COLOR: white;
+    BORDER-BOTTOM: white thin solid;
+    BORDER-LEFT: white thin solid;
+    BORDER-RIGHT: white thin solid;
+    BORDER-TOP: white thin solid;
+    FONT-FAMILY: Verdana,Arial , 'Times New Roman';
+    FONT-SIZE: 8pt
+}
+.ctrl1
+{
+    BACKGROUND-COLOR: transparent;
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    FONT-FAMILY: Verdana,Arial , 'Times New Roman';
+    FONT-SIZE: 8pt;
+    align: center
+}
+.topband
+{
+    BACKGROUND-COLOR: #000080
+}
+.btnCtrl
+{
+    BORDER-BOTTOM: gray thin solid;
+    BORDER-LEFT: gray thin solid;
+    BORDER-RIGHT: gray thin solid;
+    BORDER-TOP: gray thin solid;
+    COLOR: black;
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: bold
+}
+.btnCtrlLogin
+{
+    BORDER-BOTTOM-COLOR: #003784;
+    BORDER-LEFT: #003784 thin solid;
+    BORDER-RIGHT: #003784 thin solid;
+    BORDER-TOP: #003784 thin solid;
+    COLOR: black;
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: bold
+}
+.menu
+{
+    COLOR: white;
+    FONT-FAMILY: Arial , 'Times New Roman', Verdana;
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: bold;
+    HEIGHT: 20px;
+    PADDING-LEFT: 3px;
+    align: center
+}
+.clsPrintTableNoBorder
+{  
+    	BORDERCOLOR: silver;
+	BORDER-TOP:white 0px;
+	BORDER-BOTTOM:white 0px;
+	BORDER-LEFT:white 0px;
+	BORDER-RIGHT:white 0px;
+	FONT-FAMILY: Arial , 'Times New Roman', Verdana;
+	FONT-SIZE: 9pt;
+    	PADDING-LEFT: 3px;
+   	TEXT-ALIGN: left;
+}
+
+PRE
+{
+	FONT-FAMILY: Arial , 'Times New Roman', Verdana;
+	FONT-SIZE: 9pt
+}
+body
+{
+	margin: 3pt
+}
+
+.portButton {
+	font-family:tahoma,sans-serif;font-size:11px;background: #D5EAFF;
+	border-bottom: 1px solid #104A7B;border-right: 1px solid #104A7B;
+	border-left: 1px solid #AFC4D5;border-top:1px solid #AFC4D5;color:#000066;
+	height:19px;text-decoration:none;cursor: hand; padding: 0pt;
+}
+.tr-back{
+background-color:#E5E5E5;}
+
+.tr-back1{
+
+font: bold 6px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #ffffff;
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	border-top: 1px solid #C1DAD7;
+	letter-spacing: 3px;
+	#text-transform: uppercase;
+	text-align: center;
+	background: #CAE8EA url(./images/bg_header.jpg) no-repeat;
+
+}
+.rednote{color:red;font-weight:bold;}
+.rednote a{color:red;font-weight:bold;cursor:pointer;}
+.submenu-header {
+	font-family: Verdana, Tahoma, Arial;
+	background-image: url(../images/submenu-head-bg.gif);
+	line-height: 23px;
+	font-size: 11px;
+	font-weight: Bold;
+	color: #FFFFFF;
+	text-indent: 14px;
+	height: 23px;
+}
+.display1{
+font-family: Verdana, Tahoma, Arial;
+font-size: 10px;
+font-weight: Bold;
+color:#ffffff;
+padding-top:5px;
+}
+.watermark {
+background-image: url('Non-negotiable-image-10.gif');
+style:'background-repeat:no-repeat;';
+z-index:3;width:200%; height:200%;
+display:inline;
+filter:alpha(opacity=25);-moz-opacity: 25%
+}

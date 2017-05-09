@@ -1,0 +1,403 @@
+.minibtn{
+		color:444;
+		font-family:verdana;
+		font-size:10;
+		font-weight:bold;
+		background-color:#fed;
+		border:1px solid;
+		border-top-color:#696;
+		border-left-color:#696;
+		border-right-color:#363;
+		border-bottom-color:#363;
+		filter:progid:DXImageTransform.Microsoft.Gradient
+				(GradientType=0,StartColorStr='#ffffffff',EndColorStr='#ffE2E2E2');
+	  }
+
+ .boldheader {
+	color:333333;
+	font-family: Verdana, Helvetica;
+	font-size: 13;
+	font-weight:200;
+	text-decoration:none;	
+  }  
+
+ .boldheader1 {
+	color:333333;
+	font-family: Verdana, Helvetica;
+	font-size: 8;
+	font-weight:200;
+	text-decoration:none;	
+  } 
+.line1 {margin-top: 0px;margin-bottom: 0px; margin-left: 0px;margin-right:0px; z-index:0}
+
+	.center1 {
+		position:relative;top:25%;left:50%
+		color:#333333;
+		font-family: Verdana;  
+		font-size:10;
+		font-weight:bold;
+		background-color:#DDDDDD;
+		border:1px solid;
+		border-top-color:#000;
+		border-left-color:#000;
+		border-right-color:#000;
+		border-bottom-color:#000;		
+  }
+
+
+  .center2 {
+		position:relative;top:125%;left:50%
+		font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #4f6b72;
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	border-top: 1px solid #C1DAD7;
+	letter-spacing: 3px;
+	#text-transform: uppercase;
+	text-align: center;
+	background: #CAE8EA url(./images/bg_header.jpg) no-repeat;				
+  }
+  	.description {
+		position:relative;top:20%;left:5%
+  }
+
+  .fontClass
+  {
+		font-family: Verdana, Arial, Helvetica;  
+		font-size:8;
+  }
+  .center3
+  {
+		position:relative;top:10%;
+  }
+  .center2 {
+		position:relative;top:0%;left:35%;
+		color:#333333;
+		font-family: Verdana, Arial, Helvetica;  
+		font-size:10;
+		font-weight:bold;
+		background-color:#DDDDDD;
+		border:1px solid;
+		border-top-color:#000;
+		border-left-color:#000;
+		border-right-color:#000;
+		border-bottom-color:#000;
+  }
+.dropDown
+{
+	width: 120px;
+	font-family: Verdana, Arial, Helvetica;  
+	font-size:10;
+}
+
+.dropDown1
+{
+	width: 165px;
+	font-family: Verdana, Arial, Helvetica;  
+	font-size:10;
+}
+
+.dropDown3
+{
+	width: 220px;
+	font-family: Verdana, Arial, Helvetica;  
+	font-size:10;
+}
+
+  .formbody {margin-top:0px;margin-left: 0px; z-index:0;}
+
+  .banner {	
+  background: teal url("./images/logo-ext.JPG");
+  position:relative;
+  background-repeat: repeat-x;
+  background-position: center;
+}
+
+  .titleBar {	
+  background: teal url("./images/titlebar.JPG");
+  position:relative;
+  background-repeat: repeat-x;
+  background-position: center;
+}
+
+ .header1 {
+		 color:#ffffff;
+	font-family: Arial;
+	font-size: 10;
+	font_weight:200;
+	text-decoration:none;
+	background:#00897C;
+ }
+  .record1 {
+		 color:#000000;
+	font-family: Arial;	
+	font-size: 10;
+	text-decoration:none;	
+ }
+ .nohighlight{ 
+	background-color:#00897C;  
+	color:white;
+	font-family: Arial;
+	font-size: 12;
+	font-weight:700;
+	text-decoration:none;
+}
+.highlight{
+	background-color:#FFFFFF;
+	color:#00887C;
+	font-family: Arial;
+	font-size: 13;
+	font-weight:700;	
+	text-decoration:none;
+}
+  .bordertable{
+		color:#000000;
+		font-family: Verdana, Arial, Helvetica;  
+		font-size:10;
+		font-weight:bold;
+		background-color:#FFFFFF;
+		border:1px solid;
+		border-top-color:#444;
+		border-bottom-color:#000;
+}
+  .bordertable2{
+		color:#333333;
+		font-family: Verdana, Arial, Helvetica;  
+		font-size:10;
+		font-weight:200;
+		background-color:#dddddd;
+		border:1px solid;
+		border-left-color:#444;
+		border-right-color:#444;		
+}
+ .bordertable3{
+		 color:#333333;
+		font-family: Verdana, Arial, Helvetica;  
+		font-size:10;
+		font-weight:bold;
+		background-color:#DDDDDD;
+		border:1px solid;
+		border-top-color:#000;
+		border-left-color:#000;
+		border-right-color:#000;
+		border-bottom-color:#000;		
+}
+		
+
+  .pageheader1 {
+		 color:#339977;
+	font-family: Tahoma;
+	font-size: 16;
+	font_weight:900
+	text-decoration:none;	
+  }
+ 
+ 
+  .menuLink{
+		 color:#FFFFFF;
+	font-family: Arial;
+	font-size: 12;
+	font_weight:700
+	text-decoration:none;
+	
+  }
+		.userLink{
+		 color:#FFFFFF;
+	font-family: Arial;
+	font-size: 10;
+	text-decoration:none;	
+  }
+.data{
+		 color:#224499;
+	font-family: Arial;
+	font-size: 14;
+	text-decoration:none;
+	background:#ffffdd;
+  }
+ 
+
+  .boldheader2 {
+		 color:777777;
+	font-family: Arial;
+	font-size: 18;
+	font-weight:700;
+	text-decoration:none;	
+  }
+  .smallheader{
+	color:000000;
+	font-family: Arial;
+	font-size: 25;
+	text-decoration:none;	
+  }
+  .smallheader2{
+	color:white;
+	font-family: Arial;
+	font-size: 11;
+	text-decoration:none;	
+  }
+.smallheader3{
+	color:white;
+	font-family: Arial;
+	font-size: 17;
+	font-weight:bold;
+	text-decoration:none;
+	}
+
+
+
+
+  .imglink {
+		 color:white;
+	font-family: Arial;
+	font-size: 12;
+	text-decoration:none;
+	border: 1px  solid #bbbbbb;
+  }  
+  .imglinkOn {
+		 color:white;
+	font-family: Arial;
+	font-size: 12;
+	text-decoration:none;
+	border: 1px solid white;
+  }
+  .onlink {
+		 color:#FFFF44;
+	font-family: Arial;
+	font-size: 14;
+	font-weight:700;	
+	text-decoration:underline;
+  }
+  .offlink {
+		 color:white;
+	font-family: Arial;
+	font-size: 12;
+	font-weight:700;
+	text-decoration:none;
+  }  
+
+  .calHeader {
+		 color:white;
+	font-family: Arial;
+	font-size: 11;
+	font-weight:700;
+	text-decoration:none;
+  }
+  .calRecord {
+		 color:#224499;
+	font-family: Arial;
+	font-size: 11;
+	text-decoration:none;
+  }	
+ 
+  .record2 {
+		 color:#224499;
+	font-family: Arial;
+	font-size: 13;
+	text-decoration:none;
+	background:#cedfbd;
+  }
+  .onrecord1 {
+		 color:#224499;
+	font-family: Arial;
+	font-size: 13;
+	font-weight:700;
+	text-decoration:none;
+	background:#eeeeee;		
+  } 
+  .onrecord2 {
+		 color:#224499;
+	font-family: Arial;
+	font-size: 13;
+	font-weight:700;
+	text-decoration:none;
+	background:#cecece;		
+  }  
+  .title {
+		 color:#22763a;
+	font-family: Arial;
+	font-size: 13;
+	font-weight:700;
+	text-decoration:none;
+  }
+  .success {
+		 color:Blue;
+	font-family: Arial;
+	font-size: 13;
+	font-weight:700;
+	text-decoration:none;
+  }
+  .error {
+		 color:red;
+	font-family: Arial;
+	font-size: 13;
+	font-weight:700;
+	text-decoration:none;
+  }
+  .btn{
+		color:#444;
+		font-family:'trebuchet ms',helvetica,sans-serif;
+		font-size:14;		
+		background-color:#fed;
+		border:1px solid;
+		border-top-color:#696;
+		border-left-color:#696;
+		border-right-color:#363;
+		border-bottom-color:#363;
+		filter:progid:DXImageTransform.Microsoft.Gradient
+				(GradientType=0,StartColorStr='#ffffffff',EndColorStr='#ffC2E2E1');
+	}
+
+
+.linebox{
+		color:#333333;
+		font-family: Verdana, Arial, Helvetica;  
+		font-size:11;
+		background-color:FFFFFF;
+		border:1px solid;
+		border-top-color:#444;
+		border-left-color:#444;
+		border-right-color:#444;
+		border-bottom-color:#444;		
+}
+
+.offlink2 {
+	text-decoration:none;
+		 
+  } 
+.onlink2 {
+	text-decoration:underline;		
+	
+  }
+  .heading_back{
+	background-color:#007162;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:white;
+	font-weight:bold;
+  }
+  .copy-heading{
+  	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:white;
+	font-weight:bold;
+	}
+	 .copy11{
+  	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	}
+	 .copy11white{
+  	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:white;
+	}
+	.tr-back{background-color:#E5E5E5;}
+	.error{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:red;
+	font-weight:bold
+	}
+	.error a{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:black;}

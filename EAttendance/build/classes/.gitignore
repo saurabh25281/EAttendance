@@ -1,0 +1,10 @@
+/action/
+/dao/
+/domain/
+/hibernate.cfg.xml
+/login/
+/pojo/
+/struts.properties
+/struts.xml
+/teachermodule/
+/util/

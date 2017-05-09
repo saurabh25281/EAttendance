@@ -1,0 +1,2023 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html lang="en">
+	<head>
+		<title>TOTAL Customer Relation Ship Form </title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+		<!--<script language="JavaScript" src="myFunctions.js"></script>-->
+		<link rel="stylesheet" href="style/basic.css" type="text/css" title="Basic style">
+		<link rel="stylesheet" href="style/stylie.css" type="text/css" title="Basic style">
+		<script type="text/javascript" src="behaviour/listener.js"></script>
+		<script type="text/javascript" src="behaviour/tabs.js"></script>
+ 
+      <!-- Calendar Files Start-->
+      <!-- UTF-8 is the recommended encoding for your pages -->
+      <meta http-equiv="content-type" content="text/xml; charset=utf-8" >
+      <!-- Loading Theme file(s) -->
+      <link rel="stylesheet" href="idbi_cal/themes/winxp.css">
+      <!-- Loading Calendar JavaScript files -->
+      <script type="text/javascript" src="idbi_cal/utils.js"></script>
+      <script type="text/javascript" src="idbi_cal/calendar.js"></script>
+      <script type="text/javascript" src="idbi_cal/calendar-setup.js"></script>
+      <!-- Loading language definition file -->
+      <script type="text/javascript" src="idbi_cal/calendar-en.js"></script>
+      <!-- Calendar Files End-->
+		<script>
+      var mk_visible, opt_List, mk_visible1, opt_List1 
+			function onSubmitForm(formname,url)
+			{
+				document.frmCrf.action=url;
+				document.frmCrf.submit();
+				return true;
+			}
+			  function showOthRad(ctrl, tbx)
+			  {
+				 if (ctrl.value == "OT")
+					tbx.disabled = false
+				 else if (ctrl.value != "OT")
+				 {
+					tbx.value=""
+					tbx.disabled = true
+				 }
+			  }
+         function ShowOthTxtBox(ctrl, tbx)
+			{
+            for(var i = 0;i < ctrl.length;i++)
+            {
+               if (ctrl.options[i].selected == true && ctrl.options[i].value == "OT")
+               {
+                  tbx.disabled = false
+                  mk_visible = true
+                  opt_List = i
+               }
+               if (mk_visible && ctrl.options[opt_List].selected == false)
+               {
+                  tbx.value = ""
+                  tbx.disabled = true
+               }
+             }
+			}
+			function ShowOthTxtBox1(ctrl, tbx)
+			{
+            for(var i = 0;i < ctrl.length;i++)
+            {
+               if (ctrl.options[i].selected == true && ctrl.options[i].value == "OT")
+               {
+                  tbx.disabled = false
+                  mk_visible1 = true
+                  opt_List1 = i
+               }
+               if (mk_visible1 && ctrl.options[opt_List1].selected == false)
+               {
+                  tbx.value = ""
+                  tbx.disabled = true
+               }
+             }
+			}
+			function ShowOthLike()
+			{
+			   if (document.frmCrf.LS_optLike[document.frmCrf.LS_optLike.selectedIndex].value == "OT")
+			   {
+			      document.frmCrf.LS_txtOtherLike.disabled = false
+			   }
+			   else if(document.frmCrf.LS_optLike[document.frmCrf.LS_optLike.selectedIndex].value != "OT")
+			   {
+			      document.frmCrf.LS_txtOtherLike.disabled = true
+			      document.frmCrf.LS_txtOtherLike.value = ""
+			   }
+			}
+			function ShowOthInd()
+			{
+			   if (document.frmCrf.PR_optIndustry[document.frmCrf.PR_optIndustry.selectedIndex].value == "OT")
+			   {
+			      document.frmCrf.PR_txtOtherInd.disabled = false
+			   }
+			   else if(document.frmCrf.PR_optIndustry[document.frmCrf.PR_optIndustry.selectedIndex].value != "OT")
+			   {
+			      document.frmCrf.PR_txtOtherInd.disabled = true
+			      document.frmCrf.PR_txtOtherInd.value = ""
+			   }
+			}
+			function ShowOthMusic()
+			{
+			   if (document.frmCrf.LS_optMusic[document.frmCrf.LS_optMusic.selectedIndex].value == "OT")
+			   {
+			      document.frmCrf.LS_txtOtherMusic.disabled = false
+			   }
+			   else if(document.frmCrf.LS_optMusic[document.frmCrf.LS_optMusic.selectedIndex].value != "OT")
+			   {
+			      document.frmCrf.LS_txtOtherMusic.disabled = true
+			      document.frmCrf.LS_txtOtherMusic.value = ""
+			   }
+			}
+			function ShowOthProf()
+			{
+			   if (document.frmCrf.PR_optProfession[document.frmCrf.PR_optProfession.selectedIndex].value == "OT")
+			   {
+			      document.frmCrf.PR_txtOtherProf.disabled = false
+			   }
+			   else if(document.frmCrf.PR_optProfession[document.frmCrf.PR_optProfession.selectedIndex].value != "OT")
+			   {
+			      document.frmCrf.PR_txtOtherProf.disabled = true
+			      document.frmCrf.PR_txtOtherProf.value = ""
+			   }
+			}
+			function validate()
+			{
+				if (document.frmCrf.CD_txtName.value == "")
+				{
+					alert("Customer Name is Required Field")
+					changeTab(0,0)
+					document.frmCrf.CD_txtName.focus();
+					return false;
+				}
+				if (document.frmCrf.CD_txtShortName.value == "")
+				{
+					alert("Customer Short Name is Required Field")
+					changeTab(0,0)
+					document.frmCrf.CD_txtShortName.focus();
+					return false;
+				}
+				if (document.frmCrf.CD_txtAddr1.value == "")
+				{
+					alert("Customer Address (1) is Required Field")
+					changeTab(0,0)
+					document.frmCrf.CD_txtAddr1.focus();
+					return false;
+				}
+				if (document.frmCrf.CD_txtPerCity.value == "")
+				{
+					alert("Customer City is Required Field")
+					changeTab(0,0)
+					document.frmCrf.CD_txtPerCity.focus();
+					return false;
+				}
+            if (document.frmCrf.CD_txtPin.value == "")  
+            {
+               alert("Customer Pin (Zip) is Required Field") 
+				changeTab(0,0)
+				document.frmCrf.CD_txtPin.focus();
+               return false;
+            }
+            if (document.frmCrf.CD_txttelres.value == "")  
+            {
+               alert("Customer Residential Telephone is Required Field") 
+				changeTab(0,0)
+				document.frmCrf.CD_txttelres.focus();
+               return false;
+            }
+            if (document.frmCrf.CD_txtEmailid.value == "")  
+            {
+               alert("Customer Email Address is Required Field") 
+				changeTab(0,0)
+				document.frmCrf.CD_txtEmailid.focus();
+               return false;
+            }
+            if (document.frmCrf.CD_txtBirthDate.value == "")  
+            {
+               alert("Customer Birth Date is Required Field") 
+				changeTab(0,1)
+				document.frmCrf.CD_txtBirthDate.focus();
+               return false;
+            }
+            if (document.frmCrf.PD_txtMotherName.value == "")  
+            {
+               alert("Customer Mother's Maiden Name is Required Field") 
+				changeTab(0,1)
+				document.frmCrf.PD_txtMotherName.focus();
+               return false;
+            }
+            if (document.frmCrf.PD_txtMotherTongue.value == "")  
+            {
+               alert("Customer Mother Tounge is Required Field") 
+				changeTab(0,1)
+				document.frmCrf.PD_txtMotherTongue.focus();
+               return false;
+            }
+            if (document.frmCrf.PR_optProfession.value == "NN")  
+            {
+               alert("Customer Status is Required Selection") 
+				changeTab(0,2)
+				document.frmCrf.PR_optProfession.focus();
+               return false;
+            }
+            if (document.frmCrf.PR_optIndustry.value == "NN")  
+            {
+               alert("Customer Profession is Required Selection") 
+				changeTab(0,2)
+				document.frmCrf.PR_optIndustry.focus();
+               return false;
+            }
+            if (document.frmCrf.PR_txtOrg.value == "")  
+            {
+               alert("Customer Organisation Working Name is Required Field") 
+				changeTab(0,2)
+				document.frmCrf.PR_txtOrg.focus();
+               return false;
+            }
+            if (document.frmCrf.PR_txtProfCity.value == "")  
+            {
+               alert("Customer City of Office is Required Field") 
+				changeTab(0,2)
+				document.frmCrf.PR_txtProfCity.focus();
+               return false;
+            }
+            if (document.frmCrf.PR_txtProfPIN.value == "")  
+            {
+               alert("Customer PIN is Required Field") 
+				changeTab(0,2)
+				document.frmCrf.PR_txtProfPIN.focus();
+               return false;
+            }
+            if (document.frmCrf.PR_optTypeOfOrg.value == "NN")  
+            {
+               alert("Customer Type of Organisation is Required Field") 
+				changeTab(0,2)
+				document.frmCrf.PR_optTypeOfOrg.focus();
+               return false;
+            }
+            /*if (document.frmCrf.PR_txtExper.value == "")  
+            {
+               alert("Customer Total Years of Experience in Profession is Required Field") 
+               changeTab(0,2)
+               document.frmCrf.PR_txtExper.focus();
+               return false;
+            }*/
+            if (document.frmCrf.ED_txtQualifications.value == "")  
+            {
+               alert("Customer Academic Qualifications  is Required Field") 
+				changeTab(0,3)
+				document.frmCrf.ED_txtQualifications.focus();
+               return false;
+            }
+            if (document.frmCrf.ED_txtCollege.value == "")
+            {
+               alert("Customer University/College last attended is Required Field")
+				changeTab(0,3)
+				document.frmCrf.ED_txtCollege.focus();
+               return false;
+            }
+            if (document.frmCrf.ED_txtBatch.value == "")
+            {
+               alert("Customer Batch of Education is Required Field") 
+				changeTab(0,3)
+				document.frmCrf.ED_txtBatch.focus();
+               return false;
+            }
+	         if (document.frmCrf.PR_txtFreqTravelInd.value != "")
+	         {
+	            if (isNaN(document.frmCrf.PR_txtFreqTravelInd.value))
+	            {
+	               alert ("Frequency Travel within India can contain only Numbers.")
+	               changeTab(0,4)
+	               document.frmCrf.PR_txtFreqTravelInd.focus()
+	               return false
+	            }
+	         }
+	         if (document.frmCrf.PR_txtFreqTravelAbr.value != "")
+	         {
+	            if (isNaN(document.frmCrf.PR_txtFreqTravelAbr.value))
+	            {
+	               alert ("Frequency Travel Abroad can contain only Numbers.")
+	               changeTab(0,4)
+	               document.frmCrf.PR_txtFreqTravelAbr.focus()
+	               return false
+	            }
+	         }
+            return true;
+         }
+
+      function ChangeStatus_CustId(id1,id2)
+      {	
+      	var object1 = document.getElementById(id1);
+      	var object2 = document.getElementById(id2);
+      	if (object1.value=="N"){
+      	   object2.value = "";
+      	   object2.disabled = true;
+      	}else{
+         	object2.disabled = false;
+      	}			
+      }
+      	function ChangeStatus_CreditCards(target)
+      	{
+      		var i 
+      		var object		
+      		for(i=1;i<=Number(target.value);i=i+1)
+      		{
+      				object=document.getElementById("txtIssuer"+i);				
+      				object.disabled=false;
+      		}	
+      		for(i=Number(target.value) + 1;i<=3;i=i+1)
+      		{
+      	//			alert(i)					
+      				object=document.getElementById("txtIssuer"+i);
+      	//			alert(object.name)
+      				object.disabled=true;
+      		}	
+      	//	alert(i)
+      	}
+
+
+      </script>
+   	<SCRIPT LANGUAGE=javascript>
+      <!--
+         function changeTab(tabSys,tabPg)
+         {
+            var obj = tabSystem.instances[tabSys]
+            obj.switchtab(tabPg)
+            obj.fireEventHandler(tabSystem.tab_clickEvent, obj.tabs[tabPg]) 
+         }
+      //-->
+      </SCRIPT>
+	</head>
+   <body  bgcolor="#ffffee" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td align="left" background="images/logoidbibg.gif"><IMG src="images/logoidbi.gif" width="158" height="37"></td>
+    <td align="right" valign="middle" background="images/logoidbibg.gif"><font color="#FFFFFF" size="4" face="Verdana, Arial, Helvetica, sans-serif">Preferred Customer Details
+    </font>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td colspan=2 align="left" background="images/logo_botban_bg.gif"><img src="images/logo_botban_bg.gif" height="3"></td>
+  </tr>
+</table><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr bgcolor="#DEDEBE"> 
+    <td width="30%" valign="middle" bgcolor="#008080"><FONT size="2" color="#FFFFFF" face="Verdana, Arial, Helvetica, sans-serif">&nbsp;User 
+      : yogesh_kshirsagar</FONT></td>
+    <td width="40%" align="center" valign="middle" bgcolor="#008080"><FONT size="2" color="#FFFFFF" face="Verdana, Arial, Helvetica, sans-serif"> 
+      <STRONG>Home</STRONG></FONT></td>
+    <td width="30%" align="right" valign="middle" bgcolor="#008080"><FONT size="2" color="#FFFFFF" face="Verdana, Arial, Helvetica, sans-serif">&nbsp;</FONT></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#CCCC99" class="fonts" height="60" colspan="3"  valign=top><SCRIPT language=JavaScript src="menu1_files/src.js" type=text/javascript></SCRIPT>
+<SCRIPT language=JavaScript>
+	if(ns4) _d.write("<scr"+"ipt language=JavaScript src=menu1_files/mmenuns4.js><\/scr"+"ipt>");
+	else _d.write("<scr"+"ipt language=JavaScript src=menu1_files/mmenudom.js><\/scr"+"ipt>");
+</SCRIPT>
+<SCRIPT language=JavaScript>
+<!--
+_scrollAmount=5      					// Used for Netscape 4 scrolling
+_scrollDelay=10	     					// Used for Netscape 4 scrolling
+_menuCloseDelay=500  					// The delay for menus to remain visible on mouse off
+_menuOpenDelay=150   					// The delay for opening menus on mouse over
+_subOffsetTop=0;     					// Sub menu offset Top position
+_subOffsetLeft=-10;  					// Sub menu offset Left position
+
+Goverfilter = "Fade(duration=0.2);Shadow(color='#777777', Direction=135, Strength=5)"
+Goutfilter = "randomdissolve(duration=0.4)"
+
+with(vertStyle=new mm_style()){
+	onbgcolor = "#FFFFFF";				//drop menu font bgcolor
+	oncolor = "#000000";				//drop menu font onmouseover
+	offbgcolor = "#CCCC99";				//drop menu bgcolor
+	offcolor = "#000000";				//drop menu font normal [when mouse not over]
+	bordercolor = "#CCCC99";			//vertical border color
+	borderstyle = "solid";
+	separatorcolor = "#000000";			//drop menu seperator color
+	separatorsize = 1;
+	separatorpadding=2
+	padding = 2
+	borderwidth = 1
+	if(!mac)onborder="1px solid #000000";
+	overfilter = "Fade(duration=0.2);Shadow(color='#777777', Direction=135, Strength=5)"
+	outfilter = "randomdissolve(duration=0.4)"
+	fontsize = "75%";
+	fontstyle = "normal";
+	fontfamily = "arial, verdana, tahoma";
+	pagebgcolor = "#CCCC99";			//High light color
+	pagecolor = "#000000"; 
+	subimage = "images/black_13x13_greyboxed.gif";
+}
+
+horizStyle=new copyOf(vertStyle)
+horizStyle.overfilter=""
+horizStyle.outfilter=""
+horizStyle.borderwidth=1
+horizStyle.separatorpadding = 30
+horizStyle.onborder="";
+horizStyle.separatorcolor = "#CCCC99";	//vertical seperator
+horizStyle.subimage="images/downboxed.gif";
+horizStyle.onbgcolor = "#CCCC99";		//Highlight color of currently active menu according to page.
+horizStyle.oncolor = "#ffffff";
+horizStyle.offbgcolor = "#CCCC99";
+horizStyle.offcolor = "#FFFFFF";
+
+with(milonic=new menuname("mainmenu2"))
+{
+	top = 68;
+	left = 5;
+	style = horizStyle;
+	alwaysvisible = 1;
+	orientation="horizontal"
+
+	aI("text=<img src='icons/home1.gif'>;url=main.asp?login=yogesh_kshirsagar;");
+	aI("text=<img src='icons/customers.gif'>;url=listcust.asp;onsubimage=images/on_downboxed.gif");
+	aI("text=<img src='icons/logout.gif'>;url=logout.asp;");
+}
+
+with(milonic=new menuname("mm master")){
+	alignment="center";
+	top="offset=2"
+	style = vertStyle;
+	margin=3
+	aI("text=Regions;url=regions.asp");
+	aI("text=Source Codes;url=codes.asp");
+    aI("text=Members;url=salesteam.asp");
+    aI("text=Authorities;url=authorities.asp");    
+    aI("text=Verification Vendors;url=vendors.asp");
+}
+
+
+drawMenus()
+
+//-->
+</SCRIPT>
+<SCRIPT>
+function img_on(img)
+{
+	oimg=gmobj(img)
+	oimg.src="images/"+img+"_over.gif"
+}
+
+function img_off(img)
+{
+	oimg=gmobj(img)
+	oimg.src="images/"+img+".gif"
+}
+</SCRIPT> &nbsp; <div align=right>Tuesday, April 22, 2008&nbsp;<BR>12:51:27 PM&nbsp;</div></td>
+  </tr>
+</table>
+<form action="custsave.asp" method="post" name="frmCrf" id="frmCrf" onSubmit="return validate()">
+   	<TABLE WIDTH="95%" BORDER=0 CELLSPACING=1 CELLPADDING=1  align="center">
+   	
+   	<TR>
+   		<TD><!------------------------------------------------------Div start--------------------------------------------------------------->
+   	<div class="tabsystem keepheading"><!------------------------------------------------------Contact Details--------------------------------------------------------------->
+   		<div class="tabpage">
+   			<p title="Contact Details" class="invi">Contact</p>
+   					<table width="100%" cellspacing="0" border="0" cellpadding="0">		
+   					<tr>
+   					<td bgcolor="#000000">
+   					<table width="100%" cellspacing="1" cellpadding="2" border="0" style="borderLeft: 0">		
+   					<tr  bgcolor="#ffffee"   class= "fonts" >
+   					<td width="20%" style="MARGIN-LEFT: 75px">Customer&nbsp;<SPAN STYLE="COLOR: red" 
+                    >*</SPAN></td>
+   					<td width="60%" colspan="2">
+   						<input type="radio" name="CD_radCustomer" id="CD_radCustomer1" value="Y" onClick="JavaScript:ChangeStatus_CustId('CD_radCustomer1','CD_txtCustId');" checked>Yes
+   						<input type="radio" name="CD_radCustomer" id="CD_radCustomer2" value="N" onClick="JavaScript:ChangeStatus_CustId('CD_radCustomer2','CD_txtCustId');">No
+   					</td>		
+   					</tr>
+   					<tr bgcolor="#e8e8c4" class= "fonts" >
+   						<td width="20%">If Yes</td>
+   						<td width="60%" colspan="2" >CustId&nbsp;&nbsp;&nbsp;  <input name="CD_txtCustId" id="CD_txtCustId" MaxLength = "15" >&nbsp;&nbsp;&nbsp; <input type="button" name="btnFetch" id="btnFetch" Onclick="JavaScript:onSubmitForm('frmCrf','prefCustomer.asp');" value="Fetch Data"></td>	
+   					</tr>
+   					<tr bgcolor="#ffffee"  class= "fonts" >
+   						<td width="20%">Name&nbsp;<SPAN STYLE="COLOR: red">*</SPAN></td>
+   						<td width="60%" colspan="2"><input name="CD_txtName" id="CD_txtName" size="50" MaxLength = "80" ></td>
+   					<tr bgcolor="#e8e8c4" class= "fonts" >
+   						<td width="20%">Short Name&nbsp;<SPAN STYLE="COLOR: red">*</SPAN></td>
+   						<td width="60%" colspan="2"><input name="CD_txtShortName" size="15" MaxLength = "50" >			
+   						&nbsp;&nbsp;&nbsp; </td>
+   					</tr>
+   					<tr bgcolor= "#ffffee"  class= "fonts" >
+   					<td width="20%" style="MARGIN-LEFT: 75px">Gender&nbsp;<SPAN STYLE="COLOR: red" 
+                    >*</SPAN></td>
+   					<td width="60%" colspan="2">
+   						<input type="radio" name="CD_radGender" id="CD_radGender1" value="M" checked>Male
+   						<input type="radio" name="CD_radGender" id="CD_radGender2" value="F" >Female
+   					</td>		
+   					</tr>
+   					<tr  bgcolor="#e8e8c4" class= "fonts" >	
+   						<td width="20%">Address 1<SPAN STYLE="COLOR: red">&nbsp;*</SPAN></td>
+   						<td width="60%" colspan="2"><input name="CD_txtAddr1" size="50" MaxLength = "200" ></td>
+   					<tr bgcolor= "#ffffee" class= "fonts" >	
+   						<td width="20%">Address 2</td>
+   						<td width="60%" colspan="2"><input name="CD_txtAddr2" size="50" MaxLength = "200" ></td>
+   					<tr  bgcolor="#e8e8c4" class= "fonts" >	
+   						<td width="20%">City&nbsp;<SPAN STYLE="COLOR: red">*</SPAN></td>
+   						<td width="60%" colspan="2"><input size="50" name="CD_txtPerCity" MaxLength = "100" ></td>
+   					<tr bgcolor= "#ffffee" class= "fonts" >	
+   						<td width="20%">PIN&nbsp;<SPAN STYLE="COLOR: red">*</SPAN></td>
+   						<td width="60%" colspan="2"><input name="CD_txtPin" MaxLength = "6" ></td>
+   					<tr bgcolor="#e8e8c4" class= "fonts" >	
+   						<td width="20%">Telephone No-Res&nbsp;<SPAN STYLE="COLOR: red" 
+                    >*</SPAN></td>
+   						<td width="60%" colspan="2"><input name="CD_txttelres" MaxLength = "20" ></td>
+   					<tr   bgcolor="#ffffee" class= "fonts" >	
+   						<td width="20%">Telephone No-Off</td>
+   						<td width="60%" colspan="2"><input name="CD_txtteloff" MaxLength = "20" ></td>
+   					<tr  bgcolor="#e8e8c4" class= "fonts" >	
+   						<td width="20%">Mobile No.</td>
+   						<td width="60%" colspan="2"><input name="CD_txtMobileNo" MaxLength = "20" ></td>
+                 <TR bgColor=#ffffee>
+                   <TD class=fonts width="20%">Email id.&nbsp;<SPAN 
+                     style="COLOR: red">*</SPAN></TD>
+                   <TD width="60%" colSpan=2><INPUT size="50" name="CD_txtEmailid" MaxLength = "100" ></TD>
+				 </TR>
+   					<tr  bgcolor="#CCCC99" class= "fonts" >	
+   						<td colspan="3" align="right">
+   							<INPUT id=button1 type=button value="Next >>" name=button1 onClick="changeTab(0,1)">&nbsp;&nbsp;
+   						</td>
+   					</tr>		
+
+   				</table></td>			
+   					</tr>		
+
+   				</table>								
+   		</div><!------------------------------------------------------Personal Details--------------------------------------------------------------->
+   		<div class="tabpage">
+   			<p title="You &amp; Your Family" class="fonts">Personal</p>
+   				<table cellspacing="1"  width="100%" bgColor="#000000">	
+   					<tr  bgcolor="#ffffee" class= "fonts" >
+   						<td width="20%"   
+             valign="top" style="PADDING-TOP: 3px">Date of Birth&nbsp;<SPAN STYLE="COLOR: red" 
+              >*</SPAN></td>
+   						<td width="80%" colspan="3" valign="top" style="PADDING-TOP: 3px">
+   						<input name="CD_txtBirthDate" id="CD_txtBirthDate" readonly >
+   						<input  type="button" value="..." id = "trigger"> <!-- onClick="javascript:show_calendar('frmCrf.CD_txtBirthDate');"> -->
+			              <script type="text/javascript">//<![CDATA[
+							Zapatec.Calendar.setup({
+								firstDay          : 1,
+								weekNumbers       : true,
+								showOthers        : false,
+								showsTime         : false,
+								timeFormat        : "12",
+								step              : 1,
+								range             : [1900.01, 2999.12],
+								electric          : false,
+								singleClick       : true,
+								inputField        : "CD_txtBirthDate",
+								button            : "trigger",
+								ifFormat          : "%d-%b-%Y",
+								daFormat          : "%Y/%b/%d",
+								align             : "Br"
+							});
+						//]]></script>
+						</td>
+   					</tr>				
+   					<tr  bgcolor="#e8e8c4" class= "fonts" >
+   						<td valign="top" style="PADDING-TOP: 3px">Marital Status&nbsp;<SPAN STYLE="COLOR: red">*</SPAN></td>
+   						<td colspan="3" valign="top" style="PADDING-TOP: 3px">
+   						<input type="radio" name="PD_radMaritalStatus" Value="Y">Married
+   						<input type="radio" name="PD_radMaritalStatus" Value="N" checked>Single</td>
+   					<tr  bgcolor="#ffffee" class= "fonts" >
+   						<td valign="top" style="PADDING-TOP: 3px">Mother's Maiden Name&nbsp;<SPAN STYLE="COLOR: red">*</SPAN></td>
+   						<td colspan="3" valign="top" style="PADDING-TOP: 3px">
+   						<input name="PD_txtMotherName" size="50" MaxLength = "50" ></td>
+   					<tr  bgcolor="#e8e8c4" class= "fonts" >
+   						<td valign="top" style="PADDING-TOP: 3px">Name Of Spouse</td>
+   						<td colspan="3" valign="top" style="PADDING-TOP: 3px">
+   						<input name="PD_txtSpouseName" size="50" MaxLength = "50" ></td>
+   					<tr  bgcolor="#ffffee" class= "fonts" >
+   						<td valign="top" style="PADDING-TOP: 3px">Date of Birth of Spouse</td>
+   						<td colspan="3" valign="top" style="PADDING-TOP: 3px">
+   						<input name="PD_txtSpouseBirthDate" id="PD_txtSpouseBirthDate" readonly >
+   						<input  type="button" value="..." id = "trigger1" > <!-- onClick="javascript:show_calendar('frmCrf.PD_txtSpouseBirthDate');"-->
+						<script type="text/javascript">//<![CDATA[
+							Zapatec.Calendar.setup({
+								firstDay          : 1,
+								weekNumbers       : true,
+								showOthers        : false,
+								showsTime         : false,
+								timeFormat        : "12",
+								step              : 1,
+								range             : [1900.01, 2999.12],
+								electric          : false,
+								singleClick       : true,
+								inputField        : "PD_txtSpouseBirthDate",
+								button            : "trigger1",
+								ifFormat          : "%d-%b-%Y",
+								daFormat          : "%Y/%b/%d",
+								align             : "Br"
+							});
+						//]]></script>
+						</td>
+   					</tr>
+   					<tr  bgcolor="#e8e8c4" class= "fonts" >
+   						<td valign="top" style="PADDING-TOP: 3px">Wedding Anniversary Date</td>
+   						<td colspan="3" valign="top" style="PADDING-TOP: 3px">
+   						<input name="PD_txtAnniversaryDate" id="PD_txtAnniversaryDate" readonly >
+   						<input  type="button" value="..." id = "trigger2" ><!-- onClick="javascript:show_calendar('frmCrf.PD_txtAnniversaryDate');"-->
+						<script type="text/javascript">//<![CDATA[
+							Zapatec.Calendar.setup({
+								firstDay          : 1,
+								weekNumbers       : true,
+								showOthers        : false,
+								showsTime         : false,
+								timeFormat        : "12",
+								step              : 1,
+								range             : [1900.01, 2999.12],
+								electric          : false,
+								singleClick       : true,
+								inputField        : "PD_txtAnniversaryDate",
+								button            : "trigger2",
+								ifFormat          : "%d-%b-%Y",
+								daFormat          : "%Y/%b/%d",
+								align             : "Br"
+							});
+						//]]></script>
+						</td>
+   					</tr>
+   					<tr  bgcolor="#ffffee" class= "fonts" >
+   						<td rowspan="2" valign="top" style="PADDING-TOP: 3px">Other Important Dates</td>
+   						<td colspan="3" valign="top" style="PADDING-TOP: 3px">
+   							<input name="PD_txtImpDate1" id="PD_txtImpDate1" readonly >
+   							<input  type="button" value="..." id = "trigger3"> <!-- onClick="javascript:show_calendar('frmCrf.PD_txtImpDate1');"-->
+   							&nbsp;&nbsp;Occassion&nbsp;<input name="PD_txtOccassion1" size="40" MaxLength = "200" >
+							<script type="text/javascript">//<![CDATA[
+								Zapatec.Calendar.setup({
+								firstDay          : 1,
+								weekNumbers       : true,
+								showOthers        : false,
+								showsTime         : false,
+								timeFormat        : "12",
+								step              : 1,
+								range             : [1900.01, 2999.12],
+								electric          : false,
+								singleClick       : true,
+								inputField        : "PD_txtImpDate1",
+								button            : "trigger3",
+								ifFormat          : "%d-%b-%Y",
+								daFormat          : "%Y/%b/%d",
+								align             : "Br"
+							});
+						//]]></script>
+   						</td>
+   					</tr>
+   					<tr  bgcolor="#e8e8c4" class= "fonts" >					
+   						<td colspan="3" valign="top" style="PADDING-TOP: 3px">
+   							<input name="PD_txtImpDate2" id="PD_txtImpDate2" readonly >
+   							<input  type="button" value="..." id = "trigger4"> <!--onClick="javascript:show_calendar('frmCrf.PD_txtImpDate2');"-->
+							<script type="text/javascript">//<![CDATA[
+								Zapatec.Calendar.setup({
+								firstDay          : 1,
+								weekNumbers       : true,
+								showOthers        : false,
+								showsTime         : false,
+								timeFormat        : "12",
+								step              : 1,
+								range             : [1900.01, 2999.12],
+								electric          : false,
+								singleClick       : true,
+								inputField        : "PD_txtImpDate2",
+								button            : "trigger4",
+								ifFormat          : "%d-%b-%Y",
+								daFormat          : "%Y/%b/%d",
+								align             : "Br"
+							});
+						//]]></script>
+
+							&nbsp;
+   							&nbsp;Occassion&nbsp;<input name="PD_txtOccassion2" size="40" MaxLength = "200" >
+   						</td>
+   					</tr>
+   					<tr  bgcolor="#ffffee" class= "fonts" >					
+   						<td valign="top" style="PADDING-TOP: 3px">Mother Tongue&nbsp;<SPAN STYLE="COLOR: red">*</SPAN></td>							
+   						<td colspan="3"> <input  name="PD_txtMotherTongue" MaxLength = "30" ></td>
+   					</tr>
+   					<tr  bgcolor="#e8e8c4" class= "fonts" >					
+   						<td valign="top" style="PADDING-TOP: 3px">No Of Children</td>							
+   						<td >
+   							<SELECT name="PD_txtNoOfChildren">
+   								<option value="0" selected >..Select.........
+   								<option value="1">One
+   								<option value="2">Two
+   								<option value="3">Three
+   								<option value="4">Four
+   								<option value="5">Five
+   								<option value="6">Six
+   								<option value="7">Seven
+   								<option value="8">Eight
+   								<option value="9">Nine
+   								<option value="10">Ten</option>
+   							</SELECT>
+   						</td>
+   						<td> &nbsp; </td>
+   						<td> &nbsp; </td><!--						<td width="40%" colspan="3"><input type="text" name="PD_txtNoOfChildren"></td>   -->
+   					</tr>
+   					<tr  bgcolor="#ffffee" class= "fonts" >					
+   						<td rowspan="3" valign="top" style="PADDING-TOP: 3px">Details Of Children (if any)</td>			
+   						<td width="13%"    
+             valign="center" align="middle" style="PADDING-TOP: 3px">Child 1</td>					
+   						<td width="13%"    
+             valign="center" align="middle" style="PADDING-TOP: 3px">Child 2</td>					
+   						<td width="13%"    
+             valign="center" align="middle" style="PADDING-TOP: 3px">Child 3</td>				
+   					</tr>
+   					<tr  bgcolor="#e8e8c4" class= "fonts" >
+   						<td width="13%" valign="top" style="PADDING-TOP: 3px">Name&nbsp;<input  name="PD_txtChilName1" MaxLength = "100" ></td>
+   						<td width="13%" align="middle" style="PADDING-TOP: 3px">Name&nbsp;<input  name="PD_txtChilName2" MaxLength = "100" ></td>
+   						<td width="14%" align="middle" style="PADDING-TOP: 3px">Name&nbsp;<input  name="PD_txtChilName3" MaxLength = "100" ></td>
+   					</tr>
+   					<tr  bgcolor="#ffffee" class= "fonts" >					
+   						<td width="13%">Sex:&nbsp;<input type="radio" name="PD_radChildSex1" value="M">Male&nbsp;
+   						<input type="radio" name="PD_radChildSex1" value="F">Female</td>  
+   						<td width="13%">Sex:&nbsp;<input type="radio" name="PD_radChildSex2" value="M">Male&nbsp;
+   						<input type="radio" name="PD_radChildSex2" value="F">Female</td>  
+   						<td width="14%">Sex:&nbsp;<input type="radio" name="PD_radChildSex3" value="M">Male&nbsp;
+   						<input type="radio" name="PD_radChildSex3" value="F">Female</td>  
+   					</tr>
+   					<!--<tr  bgcolor="#e8e8c4" class= "fonts" >					
+   						<td width="13%" colspan="0" valign="top" style="PADDING-TOP: 3px">
+   							<table width="100%" cellspacing=0>					
+   								<tr bgcolor="#e8e8c4" class= "fonts"><td width="100%" colspan="0">Date of Birth</td></tr>
+   								<tr bgcolor="#e8e8c4" class= "fonts">
+   									<td width="100%"><input name="PD_txtChildDateBirth1" id="PD_txtChildDateBirth1" size="12" readonly >
+   									<input type="button" value="..."  id= "trigger5"	> <!--OnClick="javascript:show_calendar('frmCrf.PD_txtChildDateBirth1');"-->
+				             <!-- <script type="text/javascript">//<![CDATA[
+								Zapatec.Calendar.setup({
+								firstDay          : 1,
+								weekNumbers       : true,
+								showOthers        : false,
+								showsTime         : false,
+								timeFormat        : "12",
+								step              : 1,
+								range             : [1900.01, 2999.12],
+								electric          : false,
+								singleClick       : true,
+								inputField        : "PD_txtChildDateBirth1",
+								button            : "trigger5",
+								ifFormat          : "%d-%b-%Y",
+								daFormat          : "%Y/%b/%d",
+								align             : "Br"
+								});
+							//]]></script>
+									</td>
+   									
+   								</tr>	
+   							</table>
+   						</td>
+   						<td width="13%" colspan="0" valign="top" style="PADDING-TOP: 3px">
+   							<table width="100%" cellspacing=0>					
+   								<tr bgcolor="#e8e8c4" class= "fonts"><td width="100%" colspan="0">Date of Birth</td></tr>
+   								<tr bgcolor="#e8e8c4" class= "fonts">
+   									<td width="100%"><input name="PD_txtChildDateBirth2" id="PD_txtChildDateBirth2" size="12" readonly>
+   									<input  type="button" value="..." id = "trigger6"	> <!-- OnClick="javascript:show_calendar('frmCrf.PD_txtChildDateBirth2');" -->
+									<!--<script type="text/javascript">//<![CDATA[
+										Zapatec.Calendar.setup({
+										firstDay          : 1,
+										weekNumbers       : true,
+										showOthers        : false,
+										showsTime         : false,
+										timeFormat        : "12",
+										step              : 1,
+										range             : [1900.01, 2999.12],
+										electric          : false,
+										singleClick       : true,
+										inputField        : "PD_txtChildDateBirth2",
+										button            : "trigger6",
+										ifFormat          : "%d-%b-%Y",
+										daFormat          : "%Y/%b/%d",
+										align             : "Br"
+										});
+									//]]></script>
+									</td>								
+   								</tr>	
+   							</table>
+   						</td>
+   						<td width="13%" colspan="0" valign="top" style="PADDING-TOP: 3px">
+   							<table width="100%" cellspacing=0>					
+   								<tr bgcolor="#e8e8c4" class= "fonts"><td width="100%" colspan="0">Date of Birth</td></tr>
+   								<tr bgcolor="#e8e8c4" class= "fonts">
+   									<td width="100%" ><input name="PD_txtChildDateBirth3" id="PD_txtChildDateBirth3" size="12" readonly>
+   									<input  readonly type="button" value="..." id = "trigger7" ><!--OnClick="javascript:show_calendar('frmCrf.PD_txtChildDateBirth3');"-->
+			              <!--<script type="text/javascript">//<![CDATA[
+							Zapatec.Calendar.setup({
+								firstDay          : 1,
+								weekNumbers       : true,
+								showOthers        : false,
+								showsTime         : false,
+								timeFormat        : "12",
+								step              : 1,
+								range             : [1900.01, 2999.12],
+								electric          : false,
+								singleClick       : true,
+								inputField        : "PD_txtChildDateBirth3",
+								button            : "trigger7",
+								ifFormat          : "%d-%b-%Y",
+								daFormat          : "%Y/%b/%d",
+								align             : "Br"
+							});
+						//]]></script>
+									</td>							
+   								</tr>	
+   							</table>
+   						</td>					
+   					</tr>
+   					<tr  bgcolor="#ffffee" class= "fonts" >					
+   						<td width="13%"><input  type="radio" name="PD_radResident1" Value="RS">Resident
+   							<input  type="radio" name="PD_radResident1" value="NRS">Non Resident
+   						</td>
+   						<td width="13%"><input  type="radio" name="PD_radResident2" Value="RS">Resident
+   							<input  type="radio" name="PD_radResident2" value="NRS">Non Resident
+   						</td>
+   						<td width="14%"><input  type="radio" name="PD_radResident3" Value="RS">Resident
+   							<input  type="radio" name="PD_radResident3" value="NRS">Non Resident
+   						</td>
+   					</tr>
+   					<tr  bgcolor="#e8e8c4" class= "fonts" >					
+   						<td width="13%"><input  type="radio" name="PD_radChildMaritalStatus1" Value="Y">Married
+   							<input    
+               type="radio" name="PD_radChildMaritalStatus1" 
+               value="N">Single
+   						</td>
+   						<td width="13%"><input  type="radio" name="PD_radChildMaritalStatus2" Value="Y">Married
+   							<input    
+               type="radio" name="PD_radChildMaritalStatus2" 
+               value="N">Single
+   						</td>
+   						<td width="14%"><input  type="radio" name="PD_radChildMaritalStatus3" Value="Y">Married
+   							<input    
+               type="radio" name="PD_radChildMaritalStatus3" 
+               value="N">Single
+   						</td>
+   					</tr>-->
+   					<tr  bgcolor="#ffffee" class= "fonts" >
+						<td>&nbsp;</td>
+   						<td width="13%">
+   							<table width="100%" cellspacing=0>					
+   								<tr><td width="100%" colspan="0">Age</td></tr>
+   								<tr>
+   									<td width="100%"><input name="PD_txtChildStayLocation1" MaxLength = "3" size="3"></td>								
+   								</tr>	
+   							</table>
+   						</td>						
+   						<td width="13%">
+   							<table width="100%" cellspacing=0>					
+   								<tr><td width="100%" colspan="0">Age</td></tr>
+   								<tr>
+   									<td width="100%"><input name="PD_txtChildStayLocation2" MaxLength = "3" size="3"></td>								
+   								</tr>	
+   							</table>									
+   						</td>
+   						<td width="14%">
+   							<table width="100%" cellspacing=0>					
+   								<tr><td width="100%" colspan="0">Age</td></tr>
+   								<tr>
+   									<td width="100%"><input name="PD_txtChildStayLocation3" MaxLength = "3" size="3"></td>								
+   								</tr>	
+   							</table>																	
+   						</td> 
+   					</tr> 
+   					<tr  bgcolor="#CCCC99" class= "fonts" >	
+   						<td colspan="4" >
+   						   <table width=100% cellpadding=0 cellspacing=0><tr>
+   						   <td align="left">&nbsp;&nbsp;<INPUT id=button1 type=button value="<< Previous" name=button1 onClick="changeTab(0,0)"></td>
+   							<td align="right"><INPUT id=button1 type=button value="Next >>" name=button1 onClick="changeTab(0,2)">&nbsp;&nbsp;
+   							</td></tr></table>
+   						</td>
+   					</tr>
+	         </table>
+   		</div><!-----------------------------------Profession tab starts--------------------------------------------->
+   		<div class="tabpage">
+   			<p title="Your Work Life" class="fonts">Profession</p>
+   					<TABLE cellspacing="0" height = "100%" width = "100%" bgColor="#ffffee">
+   					<tr><td valign = "top">
+   					<table cellspacing= "1" width="100%" bgColor="#000000">
+                 <TBODY>	
+   					<tr bgcolor="#e8e8c4" class= "fonts" >
+   						<td width="20%">You are&nbsp;<SPAN STYLE="COLOR: red">*</SPAN></td>
+   						<td width="60%" colspan="2" >
+   							<SELECT name="PR_optProfession" onChange = "ShowOthProf()">
+   								<option value="NN" 
+                       selected>..Select.........
+   								<option value="SL">Salaried
+   								<option value="SE">Self Employed
+   								<option value="RT">Retired
+   								<option value="OT">Others</option>
+   							</SELECT>&nbsp;&nbsp;<input type = "text" MaxLength = "20" name = "PR_txtOtherProf" disabled>
+   						</td>
+   					</tr>
+   					<tr bgcolor="#ffffee" class= "fonts" >
+   						<td width="20%">Your Industry/Profession&nbsp;<SPAN STYLE="COLOR: red" 
+                    >*</SPAN></td>
+   						<td width="60%" colspan="2" >
+   							<SELECT name="PR_optIndustry" onChange = "ShowOthInd()">
+   								<option value="NN" selected>..Select.........
+   								<option value="AR">Architect
+   								<option value="BF">Banking/Finance
+   								<option value="CA">Chartered Accountant
+   								<option value="DT">Doctor
+   								<option value="EN">Engineer
+   								<option value="OT">Others</option>
+   							</SELECT>&nbsp;&nbsp;&nbsp;<input type = "text" MaxLength = "30" name = "PR_txtOtherInd" disabled>
+   						</td>
+   					</tr>
+   					<tr bgcolor="#e8e8c4" class= "fonts" >	
+   						<td width="20%">Name of the Organisation&nbsp;<SPAN STYLE="COLOR: red" 
+                    >*</SPAN></td>
+   						<td width="60%" colspan="2"><input name="PR_txtOrg" MaxLength = "100"  ></td>
+   					<tr bgcolor="#ffffee" class= "fonts" >	
+   						<td width="20%">Office Address</td>
+   						<td width="60%" colspan="2"><input name="PR_txtOffAddr" MaxLength = "200" ></td>
+   					<tr bgcolor="#e8e8c4" class= "fonts" >	
+   						<td width="20%">City&nbsp;<SPAN STYLE="COLOR: red">*</SPAN></td>
+   						<td width="60%" colspan="2"><input name="PR_txtProfCity" MaxLength = "50"  ></td>
+   					<tr bgcolor="#ffffee" class= "fonts" >	
+   						<td width="20%">PIN&nbsp;<SPAN STYLE="COLOR: red">*</SPAN></td>
+   						<td width="60%" colspan="2"><input name="PR_txtProfPIN" MaxLength = "6"  ></td>
+   					<tr bgcolor="#e8e8c4" class= "fonts" >	
+   						<td width="20%">Type of Organisation&nbsp;<SPAN STYLE="COLOR: red">*</SPAN></td>
+   						<td width="60%" colspan="2" >
+   							<SELECT name="PR_optTypeOfOrg">
+   								<option value="NN" selected>..Select.........
+   								<option value="PB">Public
+   								<option value="PV">Private
+   								<option value="PS">Public Sector
+   								<option value="PR">Proprietary
+   								<option value="PA">Partnership</option>
+   							</SELECT>
+   						</td>
+   					</tr>
+   					<!-- <tr bgcolor="#ffffee" class= "fonts" >	
+   						<td width="20%">Total Experience in years&nbsp;<SPAN STYLE="COLOR: red" 
+                    >*</SPAN></td>
+   						<td width="60%" colspan="2"><input name="PR_txtExper" MaxLength = "50" ></td>
+   				      </td>
+   				   </tr>-->
+   					<tr  bgcolor="#CCCC99" class= "fonts" >	
+   				   	<td colspan="4" align="right">
+   						   <table width=100% cellpadding=0 cellspacing=0><tr>
+   						   <td align="left">&nbsp;&nbsp;<INPUT id=button1 type=button value="<< Previous" name=button1 onClick="changeTab(0,1)"></td>
+   							<td align="right"><INPUT id=button1 type=button value="Next >>" name=button1 onClick="changeTab(0,3)">&nbsp;&nbsp;
+   							</td></tr></table>
+   				   	</td>
+   				   </tr>
+   				</TABLE>
+   				</TR>				
+
+   		   </TABLE>
+   		</DIV>
+   		<!-----------------------------  Education -------------------------------------------------------------------------------->
+   		<div class="tabpage">
+   			<p title="Education &amp; Accomplishments (Academics)" class="fonts">Education</p>
+   				<table cellspacing="0" cellpadding="0" width="100%" height = "100%" bgcolor="#ffffee"><tr><td valign="top">
+   				<table width="100%" cellspacing="1" bgColor="#000000">					
+   					<tr bgcolor="#ffffee" class= "fonts" >
+   						<td width="33%">Academic Qualifications&nbsp;<SPAN STYLE="COLOR: red" 
+                    >*</SPAN></td>
+   						<td ><input name="ED_txtQualifications" size="50" MaxLength = "100" ></td>
+   					</tr>
+   					<tr bgcolor="#e8e8c4" class= "fonts" >
+   						<td width="33%">University/College last attended&nbsp;<SPAN STYLE="COLOR: red" 
+                    >*</SPAN></td>
+   						<td><input name="ED_txtCollege" size="50" MaxLength = "100" ></td>
+   					</tr>
+   					<tr bgcolor="#ffffee" class= "fonts"  >
+   						<td width="33%">Batch&nbsp;<SPAN STYLE="COLOR: red">*</SPAN></td>
+   						<td><input name="ED_txtBatch" size="50" MaxLength = "50" ></td>
+   					</tr>
+   					<tr  bgcolor="#CCCC99" class= "fonts" >	
+   						<td colspan="3" align="right">
+   						   <table width=100% cellpadding=0 cellspacing=0><tr>
+   						   <td align="left">&nbsp;&nbsp;<INPUT id=button1 type=button value="<< Previous" name=button1 onClick="changeTab(0,2)"></td>
+   							<td align="right"><INPUT id=button1 type=button value="Next >>" name=button1 onClick="changeTab(0,4)">&nbsp;&nbsp;
+   							</td></tr></table>
+   						</td>
+   					</tr>		
+   				</table></td></tr>
+   				</table>
+   		</div><!----------------------------------------------- Life style ----------------------------------------------------------->
+   		<div class="tabpage">
+   			<p title="Your Life Style" class="fonts">Interests</p>
+   					<table  cellspacing="1" width="100%"  bgColor="#00000">													
+   					<tr bgcolor="#e8e8c4" class= "fonts">	
+   						<td width="25%">You like</td>
+   						<td width="75%" colspan="2" >
+   							<SELECT name="LS_optLike" multiple onChange = "ShowOthTxtBox(this,document.frmCrf.LS_txtOtherLike)">
+   								<option value="NN" selected>..Select.........
+   								<option value="CO">Collection
+   								<option value="EO">Eating Out
+   								<option value="FA">Fine Arts
+   								<option value="PT">Partying
+   								<option value="PA">Performing Arts
+   								<option value="PH">Photography						
+   								<option value="RD">Reading
+   								<option value="SH">Shopping
+   								<option value="SP">Sports/Games
+   								<option value="TV">Traveling
+   								<option value="VA">Vacationing					
+   								<option value="YO">Yoga/Meditation
+   								<option value="OT">Others
+   							</SELECT>&nbsp;&nbsp;&nbsp;<input type = "text" MaxLength = "30" name = "LS_txtOtherLike"  disabled>
+   						</td>
+   					</tr><!-- <tr>
+   						<td width="40%" >How often do you indulge in your liking?</td>				
+   						<td width="40%" colspan="2"><input type="text" name="LS_txtIndulge" size="50"></td>
+   					</tr>  -->
+   					<tr  bgcolor="#ffffee" class= "fonts">
+   						<td width="25%" rowspan=3 valign=top style="PADDING-RIGHT: 2px; PADDING-LEFT: 0px; PADDING-TOP: 3px" 
+            >					
+   							<table WIDTH="100%" BORDER=0 CELLPADDING=0 CELLSPACING=0>
+   								<tr>
+   									<td>Which vehicle(s) do you drive?</td>
+   									<td align="right">1</td>
+   								</tr>
+   								<tr>
+   									<td>&nbsp;</td>
+   									<td>&nbsp;</td>
+   								</tr>
+   								<tr>
+   									<td>&nbsp;</td>
+   									<td align="right">2</td>
+   								</tr>
+   								<tr>
+   									<td>&nbsp;</td>
+   									<td>&nbsp;</td>
+   								</tr>
+   								<tr>
+   									<td>&nbsp;</td>
+   									<td align="right">3</td>
+   								</tr>
+   							</table>
+   						</td>				
+   					   <td width="75%" colspan="2"><input name="LS_txtVeh1" size="50" MaxLength = "100" ></td>
+   					</tr>
+   					<tr bgcolor="#e8e8c4" class= "fonts">
+   						<td width="75%" colspan="2" ><input name="LS_txtVeh2" size="50" MaxLength = "100" ></td>
+   					</tr>
+   					<tr bgcolor="#ffffee" class= "fonts">
+   						<td width="75%" colspan="2"><input name="LS_txtVeh3" size="50" MaxLength = "100" ></td>
+   					</tr>			
+   					<tr bgcolor="#e8e8c4" class= "fonts">
+   						<td width="25%" >Your house?</td>				
+   						<td width="75%" colspan="2">
+   							<input type="radio" name="LS_radHouse" value="OW">Owned
+   							<input type="radio" name="LS_radHouse" value="RT">Rented
+   							<input type="radio" name="LS_radHouse" value="PL">Parental
+   							<input type="radio" name="LS_radHouse" value="CP">Company provided
+   							<input type="radio" name="LS_radHouse" value="FI">Financed
+   						</td>
+   					</tr><!--<tr>
+   						<td width="40%" >You are?</td>				
+   						<td width="40%" colspan="2">
+   							<input type="radio" name="LS_radVeg" value="VG">Vegetarian
+   							<input type="radio" name="LS_radveg" value="NV">Non-Vegetarian
+   						</td>
+   					</tr>		-->	
+   					<tr bgcolor="#ffffee" class= "fonts">
+   						<td width="25%" valign="top">Favourite Cuisine</td>				
+   						<td width="75%" colspan="2">
+   							<input type="checkbox" name="LS_radCuisine" value="HF">Home Cooked Food
+   							<input type="checkbox" name="LS_radCuisine" value="ID">Indian
+   							<input type="checkbox" name="LS_radCuisine" value="CH">Chinese
+   							<input type="checkbox" name="LS_radCuisine" value="TH">Thai
+   							<input type="checkbox" name="LS_radCuisine" value="IT">Italian
+   							<input type="checkbox" name="LS_radCuisine" value="MX">Mexican
+   						</td>
+   					</tr>			
+   					<tr bgcolor="#e8e8c4" class= "fonts">
+   						<td width="25%" valign="top" >Preferred Vacation site</td>				
+   						<td width="75%" colspan="2">
+   							<input type="checkbox" name="LS_radVacSite" value="HL">Hills
+   							<input type="checkbox" name="LS_radVacSite" value="CO">Coastal
+   							<input type="checkbox" name="LS_radVacSite" value="WT">WildLife trip
+   							<input type="checkbox" name="LS_radVacSite" value="RT">Religious trip
+   							<input type="checkbox" name="LS_radVacSite" value="HR">Health resorts
+   							<input type="checkbox" name="LS_radVacSite" value="FH">Family Home
+   						</td>
+   					</tr>
+   					<tr bgcolor="#ffffee" class= "fonts">	
+   						<td width="25%" >Preferred Music</td>
+   						<td width="75%" colspan="2" >
+   							<SELECT name="LS_optMusic" onChange="ShowOthTxtBox1(this,document.frmCrf.LS_txtOtherMusic)" multiple>
+   								<option value="NN" selected >..Select.........
+   								<option value="GZ">Ghazals
+   								<option value="II">Instrumental-Indian
+   								<option value="PP">Pop
+   								<option value="RL">Religious
+   								<option value="RM">Remix	
+   								<option value="TD">Traditional
+   								<option value="VI">Vocal-Indian
+   								<option value="WT">Western
+   								<option value="OT">Others
+   							</SELECT>&nbsp;&nbsp;&nbsp;<input type = "text" MaxLength = "20" name = "LS_txtOtherMusic"  disabled>
+   						</td>
+   					</tr>	
+   					<tr bgcolor="#e8e8c4" class= "fonts">
+   						<td width="25%" >Books/Newspaper you read</td>				
+   						<td width="75%" colspan="2"><input name="LS_txtReading" size="50" MaxLength = "100" ></td>
+   					</tr>			
+   					<tr bgcolor="#ffffee" class= "fonts">
+   						<td width="25%" >Preferred Language</td>				
+   						<td width="75%" colspan="2">
+   							<input type="radio" name="LS_radLanguage" value="EN" onClick="showOthRad(this,document.frmCrf.LS_txtOtherLang)">English
+   							<input type="radio" name="LS_radLanguage" value="HI" onClick="showOthRad(this,document.frmCrf.LS_txtOtherLang)">Hindi
+   							<input type="radio" name="LS_radLanguage" value="MR" onClick="showOthRad(this,document.frmCrf.LS_txtOtherLang)">Marathi
+   							<input type="radio" name="LS_radLanguage" value="OT" onClick="showOthRad(this,document.frmCrf.LS_txtOtherLang)">Others
+   							<input type="text" name="LS_txtOtherLang" disabled>
+   						</td>
+   					</tr>
+   					<tr bgcolor="#e8e8c4" class= "fonts">	
+   						<td width="25%">Subjects of Interest</td>
+   						<td width="75%" colspan="2" >
+   							<SELECT name="LS_optInterest">
+   								<option value="NN" selected>..Select.........
+   								<option value="BF">Business &amp; Finance
+   								<option value="CL">Classics
+   								<option value="EC">Economy												
+   								<option value="FI">Fiction
+   								<option value="HS">History
+   								<option value="MD">Medicine
+   								<option value="PS">Personalities
+   								<option value="PH">Philosophy
+   								<option value="PO">Politics	
+   								<option value="SC">Science
+   								<option value="SP">Spiritual</option>
+   							</SELECT>
+   						</td>
+   					</tr>	
+   					<tr bgcolor="#ffffee" class= "fonts">	
+   						<td width="25%">Frequency of travel per Year</td>
+   						<td width="50%"  >Within India&nbsp;<input size="15" name="PR_txtFreqTravelInd" MaxLength = "10" ></td>		
+   						<td width="50%">Abroad&nbsp;<input name="PR_txtFreqTravelAbr" MaxLength = "10" ></td>			
+   					</tr>
+   					<tr bgcolor="#e8e8c4" class= "fonts">	
+   						<td width="25%">Your favourite airline</td>
+   						<td width="50%"  >Within India&nbsp;<input size="15" name="PR_txtFavAirInd" MaxLength = "50"  ></td>			
+   						<td width="50%">Abroad&nbsp;<input name="PR_txtFavAirAbr" MaxLength = "50" ></td>			
+   					</tr>
+   					<tr bgcolor="#ffffee" class= "fonts">	
+   						<td width="25%">You Normally travel for</td>
+   						<td width="75%" colspan="2" >
+   							<SELECT name="LS_optTravel">
+   								<option value="NN" selected >..Select.........
+   								<option value="BU">Business
+   								<option value="LS">Leisure
+   								<option value="BL">Both</option>												
+   							</SELECT>
+   						</td>
+   					</tr>	
+   					<tr  bgcolor="#CCCC99" class= "fonts" >	
+   						<td colspan="3" align="right">
+   						   <table width=100% cellpadding=0 cellspacing=0><tr>
+   						   <td align="left">&nbsp;&nbsp;<INPUT id=button1 type=button value="<< Previous" name=button1 onClick="changeTab(0,3)"></td>
+   							<td align="right"><INPUT id=button1 type=button value="Next >>" name=button1 onClick="changeTab(0,5)">&nbsp;&nbsp;
+   							</td></tr></table>
+   						</td>
+   					</tr>		
+
+   			</table>
+   		</div>
+   		<!----------------------------------------Your Money Matters (Finances) ----------------------------------------->
+   		<div class="tabpage">
+   			<p title="Your Money Matters" class="fonts">Finance</p>
+   				<table  cellspacing="1" width="100%" bgColor="#000000"><!--<tr>
+   						<td width="45%" >Annual Household incomes</td>				
+   						<td width="35%" colspan="3"><input type="text" name="MM_txtAnnualIncome" size="20"></td>
+   					</tr>			
+   					<tr>
+   						<td width="45%" >% Saved/Invested</td>				
+   						<td width="35%" colspan="3"><input type="text" name="MM_txtInvested" size="10"></td>
+   					</tr>			
+   					<tr>
+   						<td width="45%" >Number of earning members in your family&nbsp;<SPAN STYLE="color:red;">*</SPAN></td>				
+   						<td width="35%" colspan="3"><input type="text" name="MM_txtEarningMembers" size="10"></td>
+   					</tr>-->			
+   					<tr bgcolor="#ffffee" class= "fonts">
+   						<td width="45%" rowspan="4" valign="top" >Your relationships with IDBI Bank</td>				
+   						<td width="13%" align="middle" colspan="0" style="PADDING-RIGHT: 13px">
+   							<table width="100%" border="0" cellspacing=0 cellpadding=0>
+   								<tr><td width="100%">Savings Bank a/c&nbsp;</td></tr>
+   								<tr><td width="100%"><input name="MM_txtSavingsBankac" MaxLength = "100"  ></td></tr>
+   							</table>
+   						</td>						
+   						<td width="13%" colspan="0" align="middle" style="PADDING-RIGHT: 13px">						
+   							<table width="100%" border="0" cellspacing=0 cellpadding=0>
+   								<tr><td width="100%">Fixed Deposits</td></tr>
+   								<tr><td width="100%"><input name="MM_txtFD" MaxLength = "100" ></td></tr>
+   							</table>					
+   						</td>
+   						<td width="14%" colspan="0" align="middle" style="PADDING-RIGHT: 13px">					
+   							<table width="100%" border="0" cellspacing=0 cellpadding=0>
+   								<tr><td width="100%">Current Account</td></tr>
+   								<tr><td width="100%"><input name="MM_txtCurrentac" MaxLength = "100" ></td></tr>
+   							</table>
+   						</td>
+   					</tr>
+   					<tr bgcolor="#e8e8c4" class= "fonts">					
+   						<td width="13%" colspan="0" align="middle" style="PADDING-RIGHT: 13px">
+   							<table width="100%" border="0" cellspacing=0 cellpadding=0>
+   								<tr><td width="100%">Salary a/c</td></tr>
+   								<tr><td width="100%"><input name="MM_txtSalaryac" MaxLength = "100" >
+   								</td></tr>
+   							</table>					
+   						</td>
+   						<td width="13%" colspan="0" align="middle" style="PADDING-RIGHT: 13px">
+   							<table width="100%" border="0" cellspacing=0 cellpadding=0>
+   								<tr><td width="100%">Home Loan&nbsp;</td></tr>
+   								<tr><td width="100%"><input name="MM_txtHomeLoan" MaxLength = "100" ></td></tr>
+   							</table>					
+   						</td>
+   						<td width="14%" colspan="0" align="middle" style="PADDING-RIGHT: 13px">					
+   							<table width="100%" border="0" cellspacing=0 cellpadding=0>
+   								<tr><td width="100%">Personal Loan</td></tr>
+   								<tr><td width="100%"><input name="MM_txtPersonalLoan" MaxLength = "100" ></td></tr>
+   							</table>					
+   						</td>
+   					</tr>
+   					<tr bgcolor="#ffffee" class= "fonts">					
+   						<td width="13%" colspan="0" align="middle" style="PADDING-RIGHT: 13px">
+   							<table width="100%" border="0" cellspacing=0 cellpadding=0>
+   								<tr><td width="100%">Demat</td></tr>
+   								<tr><td width="100%"><input name="MM_txtDemat" MaxLength = "100" ></td></tr>
+   							</table>					
+   						</td>
+   						<td width="13%" colspan="0" align="middle" style="PADDING-RIGHT: 13px">
+   							<table width="100%" border="0" cellspacing=0 cellpadding=0>
+   								<tr><td width="100%">Loan Against Securities</td></tr>
+   								<tr><td width="100%"><input name="MM_txtLAS" MaxLength = "100" ></td></tr>
+   							</table>
+   						</td>
+   						<td width="14%" colspan="0" align="middle" style="PADDING-RIGHT: 13px">
+   							<table width="100%" border="0" cellspacing=0 cellpadding=0>
+   								<tr><td width="100%">Pension Account&nbsp;</td></tr>
+   								<tr><td width="100%"><input name="MM_txtPensionac" MaxLength = "100" ></td></tr>
+   							</table>
+   							</td>
+   					</tr>
+   					<tr bgcolor="#e8e8c4" class= "fonts">					
+   						<td width="13%" colspan="0" align="middle" style="PADDING-RIGHT: 13px">
+   							<table width="100%" border="0" cellspacing=0 cellpadding=0>
+   								<tr><td width="100%">Power Plus A/c</td></tr>
+   								<tr><td width="100%"><input name="MM_txtPowerPlusac" MaxLength = "100" ></td></tr>
+   							</table>
+   						</td>
+   						<td width="13%" colspan="2" align="middle" style="PADDING-RIGHT: 13px">
+   							<table width="100%" border="0" cellspacing=0 cellpadding=0>
+   								<tr><td width="100%">Others</td></tr>
+   								<tr><td width="100%"><input name="MM_txtRelationshipOthers" MaxLength = "100" ></td></tr>
+   							</table>
+   						</td>
+   					</tr>
+   					<!-- <tr bgcolor="#e8e8c4" class= "fonts">
+   						<td width="45%" >Who does your financial transactions?</td>				
+   						<td width="35%" colspan="3"    
+             bgcolor="#ffffee" class="fonts">
+   							<input type="radio" name="MM_radFinTrans" value="SL">Self
+   							<input type="radio" name="MM_radFinTrans" value="SC">Secretary
+   							<input type="radio" name="MM_radFinTrans" value="SP">Spouse
+   							<input type="radio" name="MM_radFinTrans" value="OT">Others
+   						</td>
+   					</tr> -->
+   					<tr bgcolor="#ffffee" class= "fonts">
+   						<td width="45%" valign="top">Preferred Channels?</td>				
+   						<td width="35%" colspan="3" bgcolor="#e8e8c4" class= "fonts">
+   							<input type="radio" name="MM_radChannels" value="ATM">ATM
+   							<input type="radio" name="MM_radChannels" value="IB">Internet Banking
+   							<input type="radio" name="MM_radChannels" value="PB">Phone Banking
+   							<input type="radio" name="MM_radChannels" value="MB">Mobile Banking
+   							<input type="radio" name="MM_radChannels" value="BB">Branch Banking
+   						</td>
+   					</tr>
+   				</table> 
+   					<table cellspacing="1" width = "100%" height = "100%" bgcolor = "#000000">		
+   					<tr bgcolor="#e8e8c4" class= "fonts">
+   						<td width="40%"  align="middle">Relationships through IDBI bank</td>
+   						<td width="10%" align="middle">Date</td>
+   						<td width="10%" align="middle" >Amount</td>
+   						<td width="10%" align="middle">Application No.&amp; type</td>
+   						<td width="10%" align="middle">Total Value</td>				
+   					</tr>
+   					<tr bgcolor="#ffffee" class= "fonts">
+   						<td width="40%" rowspan="3" valign="top" style="PADDING-TOP: 3px">Mutual Funds</td>
+   						<td width="10%"  bgcolor="#e8e8c4" class= "fonts" ><input name="MM_txtMFDate1" readonly><input  type="button" value="..." ID = "Trigger8"> <!-- onClick="javascript:show_calendar('frmCrf.MM_txtMFDate1');"-->
+			              <script type="text/javascript">//<![CDATA[
+							Zapatec.Calendar.setup({
+								firstDay          : 1,
+								weekNumbers       : true,
+								showOthers        : false,
+								showsTime         : false,
+								timeFormat        : "12",
+								step              : 1,
+								range             : [1900.01, 2999.12],
+								electric          : false,
+								singleClick       : true,
+								inputField        : "MM_txtMFDate1",
+								button            : "trigger8",
+								ifFormat          : "%d-%b-%Y",
+								daFormat          : "%Y/%b/%d",
+								align             : "Br"
+							});
+						//]]></script>
+						</td>
+   						<td width="10%"  bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtMFAmount1" MaxLength = "100" ></td>
+   						<td width="10%"  bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtMFAppNo1" MaxLength = "100"  ></td>
+   						<td width="10%" rowspan="3">
+   							<table width="100%" cellspacing="0" >
+   								<tr bgcolor="#ffffee" class= "fonts"><td align="middle">Total Value</td></tr>
+   								<tr bgcolor="#ffffee" class= "fonts"><td><input name="MM_txtMFTotalValue" MaxLength = "100" ></td></tr>
+   							</table>
+   						</td>
+   					</tr>
+   					<tr bgcolor="#e8e8c4" class= "fonts">
+   						<td width="10%" ><input name="MM_txtMFDate2" readonly ><input  type="button" value="..." id="Trigger9"><!-- nClick="javascript:show_calendar('frmCrf.MM_txtMFDate2');"-->
+			              <script type="text/javascript">//<![CDATA[
+							Zapatec.Calendar.setup({
+								firstDay          : 1,
+								weekNumbers       : true,
+								showOthers        : false,
+								showsTime         : false,
+								timeFormat        : "12",
+								step              : 1,
+								range             : [1900.01, 2999.12],
+								electric          : false,
+								singleClick       : true,
+								inputField        : "MM_txtMFDate2",
+								button            : "trigger9",
+								ifFormat          : "%d-%b-%Y",
+								daFormat          : "%Y/%b/%d",
+								align             : "Br"
+							});
+						//]]></script>
+						</td>
+   						<td width="10%" ><input name="MM_txtMFAmount2" MaxLength = "100" ></td>
+   						<td width="10%" ><input name="MM_txtMFAppNo2" MaxLength = "100" ></td>
+   					</tr>
+   					<tr bgcolor="#e8e8c4" class= "fonts">			
+   						<td width="10%" ><input name="MM_txtMFDate3" readonly ><input  type="button" value="..." id ="Trigger10" > <!-- onClick="javascript:show_calendar('frmCrf.MM_txtMFDate3');" -->
+			              <script type="text/javascript">//<![CDATA[
+							Zapatec.Calendar.setup({
+								firstDay          : 1,
+								weekNumbers       : true,
+								showOthers        : false,
+								showsTime         : false,
+								timeFormat        : "12",
+								step              : 1,
+								range             : [1900.01, 2999.12],
+								electric          : false,
+								singleClick       : true,
+								inputField        : "MM_txtMFDate3",
+								button            : "trigger10",
+								ifFormat          : "%d-%b-%Y",
+								daFormat          : "%Y/%b/%d",
+								align             : "Br"
+							});
+						//]]></script>
+						</td>
+   						<td width="10%" ><input name="MM_txtMFAmount3" MaxLength = "100" ></td>
+   						<td width="10%" ><input name="MM_txtMFAppNo3" MaxLength = "100" ></td>
+   					</tr>
+   					<tr bgcolor="#e8e8c4" class= "fonts">
+   						<td width="40%" rowspan="3" valign="top" style="PADDING-TOP: 3px">GOI bonds</td>
+   						<td width="10%" ><input name="MM_txtGOIDate1" readonly ><input  type="button" value="..." id ="trigger11" > <!--onClick="javascript:show_calendar('frmCrf.MM_txtGOIDate1');"-->
+			              <script type="text/javascript">//<![CDATA[
+							Zapatec.Calendar.setup({
+								firstDay          : 1,
+								weekNumbers       : true,
+								showOthers        : false,
+								showsTime         : false,
+								timeFormat        : "12",
+								step              : 1,
+								range             : [1900.01, 2999.12],
+								electric          : false,
+								singleClick       : true,
+								inputField        : "MM_txtGOIDate1",
+								button            : "trigger11",
+								ifFormat          : "%d-%b-%Y",
+								daFormat          : "%Y/%b/%d",
+								align             : "Br"
+							});
+						//]]></script>
+						</td>
+						<td width="10%" ><input name="MM_txtGOIAmount1" MaxLength = "100" ></td>
+						<td width="10%" ><input name="MM_txtGOIAppNo1" MaxLength = "50"  ></td>
+						<td width="10%" rowspan="3"><table width="100%" cellspacing="0" ><TBODY>
+   								<tr><td align="middle">Total Value</td></tr>
+   								<tr><td><input name="MM_txtGOITotalValue" MaxLength = "100" ></td></td></tr>
+   							</table></TD></TR>
+   					<tr bgcolor="#e8e8c4" class= "fonts">			
+   						<td width="10%"  bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtGOIDate2" readonly ><input  type="button" value="..." id = "trigger12"> <!-- onClick="javascript:show_calendar('frmCrf.MM_txtGOIDate2');"-->
+			              <script type="text/javascript">//<![CDATA[
+							Zapatec.Calendar.setup({
+								firstDay          : 1,
+								weekNumbers       : true,
+								showOthers        : false,
+								showsTime         : false,
+								timeFormat        : "12",
+								step              : 1,
+								range             : [1900.01, 2999.12],
+								electric          : false,
+								singleClick       : true,
+								inputField        : "MM_txtGOIDate2",
+								button            : "trigger12",
+								ifFormat          : "%d-%b-%Y",
+								daFormat          : "%Y/%b/%d",
+								align             : "Br"
+							});
+						//]]></script>
+						</td>
+   						<td width="10%"  bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtGOIAmount2" MaxLength = "100" ></td>
+   						<td width="10%"  bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtGOIAppNo2" MaxLength = "50"  ></td>
+   					</tr>
+   					<tr bgcolor="#e8e8c4" class= "fonts">			
+   						<td width="10%"  bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtGOIDate3" readonly><input  type="button" value="..." id = "trigger13"> <!--onClick="javascript:show_calendar('frmCrf.MM_txtGOIDate3');" -->
+			              <script type="text/javascript">//<![CDATA[
+							Zapatec.Calendar.setup({
+								firstDay          : 1,
+								weekNumbers       : true,
+								showOthers        : false,
+								showsTime         : false,
+								timeFormat        : "12",
+								step              : 1,
+								range             : [1900.01, 2999.12],
+								electric          : false,
+								singleClick       : true,
+								inputField        : "MM_txtGOIDate3",
+								button            : "trigger13",
+								ifFormat          : "%d-%b-%Y",
+								daFormat          : "%Y/%b/%d",
+								align             : "Br"
+							});
+						//]]></script>
+						</td>
+   						<td width="10%"  bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtGOIAmount3" MaxLength = "100" ></td>
+   						<td width="10%"  bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtGOIAppNo3" MaxLength = "50"  ></td>
+   					</tr>
+   					<tr bgcolor="#ffffee" class= "fonts">
+   						<td width="40%" rowspan="3" valign="top" style="PADDING-TOP: 3px" bgcolor= "#ffffee" class="fonts">Infrastructure bonds</td>
+   						<td width="10%" bgcolor="#ffffee" class= "fonts" ><input name="MM_txtINFBDate1" readonly><input  type="button" value="..." id = "trigger14"> <!-- onClick="javascript:show_calendar('frmCrf.MM_txtINFBDate1');"-->
+			              <script type="text/javascript">//<![CDATA[
+							Zapatec.Calendar.setup({
+								firstDay          : 1,
+								weekNumbers       : true,
+								showOthers        : false,
+								showsTime         : false,
+								timeFormat        : "12",
+								step              : 1,
+								range             : [1900.01, 2999.12],
+								electric          : false,
+								singleClick       : true,
+								inputField        : "MM_txtINFBDate1",
+								button            : "trigger14",
+								ifFormat          : "%d-%b-%Y",
+								daFormat          : "%Y/%b/%d",
+								align             : "Br"
+							});
+						//]]></script>
+						</td>
+   						<td width="10%" bgcolor="#ffffee" class= "fonts" ><input name="MM_txtINFBAmount1" MaxLength = "100" ></td>
+   						<td width="10%"  bgcolor="#ffffee" class= "fonts"><input name="MM_txtINFBAppNo1" MaxLength = "50"  ></td>
+   						<td width="10%" rowspan="3" bgcolor="#ffffee" class= "fonts">
+   							<table width="100%" cellspacing="0" >
+				    <TBODY>
+   								<tr bgcolor="#ffffee" class= "fonts"><td align="middle" bgcolor="#ffffee" class= "fonts">Total Value</td></tr>
+   								<tr bgcolor="#ffffee" class= "fonts"><td bgcolor="#ffffee" class= "fonts"><input name="MM_txtINFBTotalValue" MaxLength = "100"  ></td></td></tr></TBODY></TABLE></TD></TR>
+   					<tr>			
+   						<td width="10%" bgcolor="#ffffee" class= "fonts" ><input name="MM_txtINFBDate2" readonly><input  type="button" value="..." ID ="trigger15"> <!-- onClick="javascript:show_calendar('frmCrf.MM_txtINFBDate2');"-->
+			              <script type="text/javascript">//<![CDATA[
+							Zapatec.Calendar.setup({
+								firstDay          : 1,
+								weekNumbers       : true,
+								showOthers        : false,
+								showsTime         : false,
+								timeFormat        : "12",
+								step              : 1,
+								range             : [1900.01, 2999.12],
+								electric          : false,
+								singleClick       : true,
+								inputField        : "MM_txtINFBDate2",
+								button            : "trigger15",
+								ifFormat          : "%d-%b-%Y",
+								daFormat          : "%Y/%b/%d",
+								align             : "Br"
+							});
+						//]]></script>
+						</td>
+   						<td width="10%"  bgcolor="#ffffee" class= "fonts"><input name="MM_txtINFBAmount2" MaxLength = "100" ></td>
+   						<td width="10%"  bgcolor="#ffffee" class= "fonts"><input name="MM_txtINFBAppNo2" MaxLength = "50"  ></td>
+   					</tr>
+   					<tr>			
+   						<td width="10%"  bgcolor="#ffffee" class= "fonts"><input name="MM_txtINFBDate3" readonly><input  type="button" value="..." ID = "trigger16" > <!--onClick="javascript:show_calendar('frmCrf.MM_txtINFBDate3');"-->
+			              <script type="text/javascript">//<![CDATA[
+							Zapatec.Calendar.setup({
+								firstDay          : 1,
+								weekNumbers       : true,
+								showOthers        : false,
+								showsTime         : false,
+								timeFormat        : "12",
+								step              : 1,
+								range             : [1900.01, 2999.12],
+								electric          : false,
+								singleClick       : true,
+								inputField        : "MM_txtINFBDate3",
+								button            : "trigger16",
+								ifFormat          : "%d-%b-%Y",
+								daFormat          : "%Y/%b/%d",
+								align             : "Br"
+							});
+						//]]></script>
+						</td>
+   						<td width="10%"  bgcolor="#ffffee" class= "fonts"><input name="MM_txtINFBAmount3" MaxLength = "100" ></td>
+   						<td width="10%"  bgcolor="#ffffee" class= "fonts"><input name="MM_txtINFBAppNo3" MaxLength = "50" ></td>
+   					</tr>
+
+   					<tr bgcolor="#e8e8c4" class= "fonts">
+   						<td width="40%" rowspan="3" valign="top" style="PADDING-TOP: 3px">IPO's</td>
+   						<td width="10%"  bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtIPODate1" readonly><input  type="button" value="..." id = "trigger17" > <!--onClick="javascript:show_calendar('frmCrf.MM_txtIPODate1');"-->
+			              <script type="text/javascript">//<![CDATA[
+							Zapatec.Calendar.setup({
+								firstDay          : 1,
+								weekNumbers       : true,
+								showOthers        : false,
+								showsTime         : false,
+								timeFormat        : "12",
+								step              : 1,
+								range             : [1900.01, 2999.12],
+								electric          : false,
+								singleClick       : true,
+								inputField        : "MM_txtIPODate1",
+								button            : "trigger17",
+								ifFormat          : "%d-%b-%Y",
+								daFormat          : "%Y/%b/%d",
+								align             : "Br"
+							});
+						//]]></script>
+						</td>
+   						<td width="10%"  bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtIPOAmount1" MaxLength = "100" ></td>
+   						<td width="10%"  bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtIPOAppNo1" MaxLength = "50"  ></td>
+   						<td width="10%" rowspan="3" bgcolor="#e8e8c4" class= "fonts">
+   							<table width="100%" cellspacing="0" >
+   								<tr bgcolor="#e8e8c4" class= "fonts"><td align="middle">Total Value</td></tr>
+   								<tr bgcolor="#e8e8c4" class= "fonts"><td><input name="MM_txtIPOTotalValue" MaxLength = "100" ></td></tr>							
+   							</table>									
+   						</td>
+   					</tr>
+   					<tr bgcolor="#e8e8c4" class= "fonts">			
+   						<td width="10%"  bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtIPODate2" readonly><input  type="button" value="..." id = "trigger18"> <!--onClick="javascript:show_calendar('frmCrf.MM_txtIPODate2');"-->
+			              <script type="text/javascript">//<![CDATA[
+							Zapatec.Calendar.setup({
+								firstDay          : 1,
+								weekNumbers       : true,
+								showOthers        : false,
+								showsTime         : false,
+								timeFormat        : "12",
+								step              : 1,
+								range             : [1900.01, 2999.12],
+								electric          : false,
+								singleClick       : true,
+								inputField        : "MM_txtIPODate2",
+								button            : "trigger18",
+								ifFormat          : "%d-%b-%Y",
+								daFormat          : "%Y/%b/%d",
+								align             : "Br"
+							});
+						//]]></script>
+						</td>
+   						<td width="10%"  bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtIPOAmount2" MaxLength = "100" ></td>
+   						<td width="10%"  bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtIPOAppNo2" MaxLength = "50"  ></td>
+   					</tr>
+   					<tr bgcolor="#e8e8c4" class= "fonts">			
+   						<td width="10%" bgcolor="#e8e8c4" class= "fonts" ><input name="MM_txtIPODate3" readonly><input  type="button" value="..." id = "trigger19"> <!-- onClick="javascript:show_calendar('frmCrf.MM_txtIPODate3');"-->
+			              <script type="text/javascript">//<![CDATA[
+							Zapatec.Calendar.setup({
+								firstDay          : 1,
+								weekNumbers       : true,
+								showOthers        : false,
+								showsTime         : false,
+								timeFormat        : "12",
+								step              : 1,
+								range             : [1900.01, 2999.12],
+								electric          : false,
+								singleClick       : true,
+								inputField        : "MM_txtIPODate3",
+								button            : "trigger19",
+								ifFormat          : "%d-%b-%Y",
+								daFormat          : "%Y/%b/%d",
+								align             : "Br"
+							});
+						//]]></script>
+						</td>
+   						<td width="10%"  bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtIPOAmount3" MaxLength = "100"  ></td>
+   						<td width="10%"  bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtIPOAppNo3" MaxLength = "50"   ></td>
+   					</tr>
+   					<tr bgcolor="#ffffee" class= "fonts">
+   						<td width="40%" rowspan="3" valign="top" style="PADDING-TOP: 3px">Insurance</td>
+   						<td width="10%"  bgcolor="#ffffee" class= "fonts"><input name="MM_txtInsDate1" readonly><input  type="button" value="..." id = "trigger20"> <!-- onClick="javascript:show_calendar('frmCrf.MM_txtInsDate1');"-->
+			              <script type="text/javascript">//<![CDATA[
+							Zapatec.Calendar.setup({
+								firstDay          : 1,
+								weekNumbers       : true,
+								showOthers        : false,
+								showsTime         : false,
+								timeFormat        : "12",
+								step              : 1,
+								range             : [1900.01, 2999.12],
+								electric          : false,
+								singleClick       : true,
+								inputField        : "MM_txtInsDate1",
+								button            : "trigger20",
+								ifFormat          : "%d-%b-%Y",
+								daFormat          : "%Y/%b/%d",
+								align             : "Br"
+							});
+						//]]></script>
+						</td>
+   						<td width="10%"  bgcolor="#ffffee" class= "fonts"><input name="MM_txtInsAmount1" MaxLength = "100" ></td>
+   						<td width="10%"  bgcolor="#ffffee" class= "fonts"><input name="MM_txtInsAppNo1" MaxLength = "50" ></td>
+   						<td width="10%" rowspan="3" style="PADDING-RIGHT: 16px" bgcolor= "#ffffee" class="fonts">
+   							<table width="100%" cellspacing="0" >
+   								<tr bgcolor="#ffffee" class= "fonts"><td align="middle" bgcolor="#ffffee" class= "fonts" >Total Value</td></tr>
+   								<tr bgcolor="#ffffee" class= "fonts"><td bgcolor="#ffffee" class= "fonts"><input name="MM_txtInsTotalValue" MaxLength = "100" ></td></tr>							
+   							</table>							
+   						</td>				
+   					</tr>
+   					<tr>			
+   						<td width="10%" bgcolor="#ffffee" class= "fonts" ><input name="MM_txtInsDate2" readonly><input  type="button" value="..." id = "trigger21" > <!-- onClick="javascript:show_calendar('frmCrf.MM_txtInsDate2');"-->
+			              <script type="text/javascript">//<![CDATA[
+							Zapatec.Calendar.setup({
+								firstDay          : 1,
+								weekNumbers       : true,
+								showOthers        : false,
+								showsTime         : false,
+								timeFormat        : "12",
+								step              : 1,
+								range             : [1900.01, 2999.12],
+								electric          : false,
+								singleClick       : true,
+								inputField        : "MM_txtInsDate2",
+								button            : "trigger21",
+								ifFormat          : "%d-%b-%Y",
+								daFormat          : "%Y/%b/%d",
+								align             : "Br"
+							});
+						//]]></script>
+						</td>
+   						<td width="10%"  bgcolor="#ffffee" class= "fonts"><input name="MM_txtInsAmount2" MaxLength = "100" ></td>
+   						<td width="10%"  bgcolor="#ffffee" class= "fonts"><input name="MM_txtInsAppNo2" MaxLength = "50" ></td>
+   					</tr>
+   					<tr>			
+   						<td width="10%"  bgcolor="#ffffee" class= "fonts"><input name="MM_txtInsDate3" readonly><input  type="button" value="..." id= "trigger22"><!--onClick="javascript:show_calendar('frmCrf.MM_txtInsDate3');"-->
+			              <script type="text/javascript">//<![CDATA[
+							Zapatec.Calendar.setup({
+								firstDay          : 1,
+								weekNumbers       : true,
+								showOthers        : false,
+								showsTime         : false,
+								timeFormat        : "12",
+								step              : 1,
+								range             : [1900.01, 2999.12],
+								electric          : false,
+								singleClick       : true,
+								inputField        : "MM_txtInsDate3",
+								button            : "trigger22",
+								ifFormat          : "%d-%b-%Y",
+								daFormat          : "%Y/%b/%d",
+								align             : "Br"
+							});
+						//]]></script>
+						</td>
+   						<td width="10%"  bgcolor="#ffffee" class= "fonts"><input name="MM_txtInsAmount3" MaxLength = "100" ></td>
+   						<td width="10%"  bgcolor="#ffffee" class= "fonts"><input name="MM_txtInsAppNo3" MaxLength = "50"  ></td>
+   					</tr></TBODY></TABLE>
+   				<table cellspacing="1" width="100%" bgcolor = "#000000">
+   				<tr  bgcolor="#e8e8c4" class= "fonts">
+   						<td width="40%" rowspan=3 valign=top style="PADDING-RIGHT: 2px; PADDING-LEFT: 0px; PADDING-TOP: 3px"  bgcolor="#e8e8c4" class="fonts" >					
+   							<table WIDTH="100%" BORDER=0 CELLPADDING=0 CELLSPACING=0>
+   								<tr bgcolor="#e8e8c4" class= "fonts">
+   									<td  bgcolor="#e8e8c4" class= "fonts">Your other Bankers </td>								
+   									<td align= "right" style="PADDING-TOP:   3px" bgcolor= "#e8e8c4" class="fonts">Issuer  1</td>
+   								</tr>
+   								<tr bgcolor="#e8e8c4" class= "fonts">
+   									<td bgcolor="#e8e8c4" class= "fonts">&nbsp;</td>
+   									<td  bgcolor="#e8e8c4" class= "fonts">&nbsp;</td>
+   								</tr>
+   								<tr bgcolor="#e8e8c4" class= "fonts">
+   									<td bgcolor="#e8e8c4" class= "fonts">&nbsp;</td>
+   									<td align="right" bgcolor="#e8e8c4" class= "fonts">2</td>
+   								</tr>
+   								<tr bgcolor="#e8e8c4" class= "fonts">
+   									<td bgcolor="#e8e8c4" class= "fonts">&nbsp;</td>
+   									<td bgcolor="#e8e8c4" class= "fonts">&nbsp;</td>
+   								</tr>
+   								<tr bgcolor="#e8e8c4" class= "fonts">
+   									<td bgcolor="#e8e8c4" class= "fonts">&nbsp;</td>
+   									<td align= "right"  bgcolor="#e8e8c4" class= "fonts">3</td>
+   								</tr>
+   							</table>
+   						</td>					
+   					<td width="40%" colspan="2" bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtBanker1" size="50" MaxLength = "100" ></td>
+   				</tr>
+   				<tr bgcolor="#e8e8c4" class= "fonts">
+   					<td width="40%" colspan="2" bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtBanker2" size="50" MaxLength = "100" ></td>
+   				</tr>
+   				<tr bgcolor="#e8e8c4" class= "fonts">				
+   					<td width="40%" colspan="2" bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtBanker3" size="50" MaxLength = "100" ></td>
+   				</tr>
+   				<tr rowspan="3"  bgcolor="#ffffee" class= "fonts">				
+   						<td width="40%" rowspan=3 valign=top style="PADDING-RIGHT: 2px; PADDING-LEFT: 10px; PADDING-TOP: 4px" bgcolor="#ffffee" class="fonts" >					
+   							
+   							<table WIDTH="100%" BORDER=0 CELLPADDING=0 CELLSPACING=0>
+   								<tr bgcolor="#ffffee" class= "fonts">
+   									<td bgcolor="#ffffee" class= "fonts">Your Credit Cards</td>
+   									<td align= "right"  bgcolor="#ffffee" class= "fonts">No.Of Cards </td>
+   									<td align= "right" style="PADDING-TOP: 3px" bgcolor= "#ffffee" class="fonts">&nbsp;</td>
+   								</tr>
+   								<tr bgcolor="#ffffee" class= "fonts">
+   									<td bgcolor="#ffffee" class= "fonts">&nbsp;</td>
+   									<td bgcolor="#ffffee" class= "fonts">&nbsp;</td>
+   									<td bgcolor="#ffffee" class= "fonts">&nbsp;</td>
+   								</tr>
+   								<tr bgcolor="#ffffee" class= "fonts">
+   									<td bgcolor="#ffffee" class= "fonts">&nbsp;</td>
+   									<td bgcolor="#ffffee" class= "fonts">&nbsp;</td>
+   									<td align= "right" valign="center" bgcolor="#ffffee" class= "fonts">&nbsp;</td>
+   								</tr>
+   							</table>
+   							
+   						</td>											
+   						<td width="20%" rowspan=3 valign=top style="PADDING-RIGHT: 2px; PADDING-LEFT: 0px; PADDING-TOP: 3px" 
+             bgcolor="#ffffee" class="fonts" >					
+   							<table WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0">								
+   								<tr bgcolor="#ffffee" class= "fonts"><!-- <td align=right><input type="text" name="MM_txtTotalCreditCards" size="5" onchange="JavaScript:ChangeStatus_CreditCards(this);"  bgcolor="#ffffee" class= "fonts"></td> -->
+   									<td align= "left">
+   									<SELECT name="MM_txtTotalCreditCards">
+   										<option value="0" selected >..Select.........
+   										<option value="1">One
+   										<option value="2">Two
+   										<option value="3">Three
+   										<option value="4">Four
+   										<option value="5">Five
+   										<option value="6">Six
+   										<option value="7">Seven
+   										<option value="8">Eight
+   										<option value="9">Nine
+   										<option value="10">Ten</option>
+   									</SELECT>
+   									</td>
+   									<td align= "right" style="PADDING-TOP: 3px" bgcolor= "#ffffee" class="fonts">Issuer  1</td><!--									<td bgcolor="#ffffee" class= "fonts">&nbsp;</td>
+   									<td align="right" align="bottom" style="padding-top:12px"  bgcolor="#ffffee" class= "fonts">&nbsp;</td> -->
+   								</tr>
+   								<tr bgcolor="#ffffee" class= "fonts">
+   									<td bgcolor="#ffffee" class= "fonts">&nbsp;</td>
+   									<td align="right" style="PADDING-TOP: 12px"  bgcolor="#ffffee" class= "fonts">2</td>
+   								</tr>
+   								<tr bgcolor="#ffffee" class= "fonts">
+   									<td bgcolor="#ffffee" class= "fonts">&nbsp;</td>
+   									<td bgcolor="#ffffee" class= "fonts">&nbsp;</td>
+   								</tr>
+   								<tr bgcolor="#ffffee" class= "fonts">
+   									<td bgcolor="#ffffee" class= "fonts">&nbsp;</td>
+   									<td align= "right" valign="center" bgcolor="#ffffee" class= "fonts">3</td>
+   								</tr>
+   							</table>
+   						</td></TD>
+   					<td width="20%"  bgcolor="#ffffee" class= "fonts">&nbsp;<input name="MM_txtIssuer1" size="23" MaxLength = "100" ></td>
+   				</tr>
+   				<tr bgcolor="#ffffee" class= "fonts">
+   					<td width="20%" bgcolor="#ffffee" class= "fonts">&nbsp;<input name="MM_txtIssuer2" size="23" MaxLength = "100" ></td>
+   				</tr>
+   				<tr bgcolor="#ffffee" class= "fonts">				
+   					<td width="20%"  bgcolor="#ffffee" class= "fonts">&nbsp;<input name="MM_txtIssuer3" size="23" MaxLength = "100" ></td>
+   				</tr>
+   				<tr  bgcolor="#e8e8c4" class= "fonts">
+   					<td width="40%" rowspan="1" valign="top" bgcolor="#e8e8c4" class= "fonts">Vehicle Insurance</td>			
+   					<td width="20%"  bgcolor="#e8e8c4" class= "fonts">Name of insurer</td>
+   					<td width= "20%"  bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtVehicleInsurer" size="31" MaxLength = "100" ></td>
+   				</tr>
+   				<!-- <tr  bgcolor="#e8e8c4" class= "fonts">
+   					<td width="20%"  bgcolor="#e8e8c4" class= "fonts">Due Date for renewal</td>	
+   					<td width="20%"  bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtInsuranceDueDate" id="MM_txtInsuranceDueDate" size="12" readonly >
+   					<input  type="button" value="..." onClick="javascript:show_calendar('frmCrf.MM_txtInsuranceDueDate');">
+   					</td>
+   				</tr> -->
+   				<!-- <tr bgcolor="#e8e8c4" class= "fonts">
+   					<td width="40%" rowspan="8" valign="top" bgcolor="#ffffee" class= "fonts">Present Portfolio</td>
+   					<td width="20%" bgcolor="#ffffee" class= "fonts">Equity Markets</td>
+   					<td width="20%" bgcolor="#ffffee" class= "fonts"><input name="MM_txtPercEquity" size="5" MaxLength = "10" >&nbsp;% of total</td>
+   				</tr>
+   				<tr bgcolor="#e8e8c4" class= "fonts">
+   					<td width="20%" bgcolor="#e8e8c4" class= "fonts">Bonds</td>
+   					<td width="20%" bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtPercBonds" size="5" MaxLength = "10" >&nbsp;% of total</td>
+   				</tr>
+   				<tr bgcolor="#e8e8c4" class= "fonts">				
+   					<td width="20%" bgcolor="#ffffee" class= "fonts">Mutual Funds</td>
+   					<td width="20%" bgcolor="#ffffee" class= "fonts"><input name="MM_txtPercMutualFunds" size="5" MaxLength = "10" >&nbsp;% of total</td>
+   				</tr>
+   				<tr bgcolor="#e8e8c4" class= "fonts">		
+   					<td width="20%" bgcolor="#e8e8c4" class= "fonts">Bank Fixed Deposits</td>
+   					<td width="20%" bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtPercBankFixedDeposits" size="5" MaxLength = "10" >&nbsp;% of total</td>
+   				</tr>
+   				<tr bgcolor="#ffffee" class= "fonts">		
+   					<td width="20%" bgcolor="#ffffee" class= "fonts">Property</td>
+   					<td width="20%" bgcolor="#ffffee" class= "fonts"><input name="MM_txtPercProperty" size="5" MaxLength = "10" >&nbsp;% of total</td>
+   				</tr>
+   				<tr bgcolor="#e8e8c4" class= "fonts">
+   					<td width="20%" bgcolor="#e8e8c4" class= "fonts">Bullion</td>
+   					<td width="20%" bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtPercBullion" size="5" MaxLength = "10" >&nbsp;% of total</td>
+   				</tr>
+   				<tr bgcolor="#ffffee" class= "fonts">
+   					<td width="20%" bgcolor="#ffffee" class= "fonts">Others</td>
+   					<td width="20%" bgcolor="#ffffee" class= "fonts"><input name="MM_txtPercOthers" size="5" MaxLength = "10" >&nbsp;% of total</td>
+   				</tr>
+   				<tr bgcolor="#e8e8c4" class= "fonts">		
+   					<td width="20%" bgcolor="#e8e8c4" class= "fonts">Total</td>
+   					<td width="20%" bgcolor="#e8e8c4" class= "fonts">100	</td>
+   				</tr>  -->
+   				<tr bgcolor="#e8e8c4" class= "fonts">
+   					<td width="40%"  bgcolor="#e8e8c4" class= "fonts">Insurance Cover</td>
+   					<td width="40%" colspan="2" bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtInsuranceCover" size="25" MaxLength = "10" ></td>
+   				</tr>
+   				<tr bgcolor="#ffffee" class= "fonts">
+   					<td width="40%"  bgcolor="#ffffee" class= "fonts">Insured By</td>
+   					<td width="40%" colspan="2" bgcolor="#ffffee" class= "fonts"><input name="MM_txtInsuranceBy" size="50" MaxLength = "100" ></td>
+   				</tr>
+   				<tr bgcolor="#e8e8c4" class= "fonts">
+   					<td width="40%"  bgcolor="#e8e8c4" class= "fonts">Type of policy</td>
+   					<td width="40%" colspan="2" bgcolor="#e8e8c4" class= "fonts"><input name="MM_txtTypeOfPolicy" size="50" MaxLength = "100" ></td>
+   				</tr>
+   					<tr  bgcolor="#CCCC99" class= "fonts" >	
+   						<td colspan="3" align="right">
+   						   <table width=100% cellpadding=0 cellspacing=0><tr>
+   						   <td align="left">&nbsp;&nbsp;<INPUT id=button1 type=button value="<< Previous" name=button1 onClick="changeTab(0,4)"></td>
+   							<td align="right"><INPUT id=button1 type=button value="Next >>" name=button1 onClick="changeTab(0,6)">&nbsp;&nbsp;
+   							</td></tr></table>
+   						</td>
+   					</tr>		
+
+   			</table>
+
+   		</div><!------------------------------------Tab Financial  planning--------------------------------------------->
+   		<div class="tabpage">
+   			<p title="Your Financial Plannings" class="fonts">Planning</p>
+   			<TABLE  cellspacing="0" cellpadding="0" width="100%" height = "100%" bgcolor="#ffffee"> <tr><td valign="top">
+   			<table  cellspacing="1" width="100%"  bgColor="#00000"><!--	<tr>
+   					<td width="40%" >Planning to buy a house</td>
+   					<td width="40%" colspan="3">Period&nbsp; 
+   						<input type="textbox" size=3 maxlength=2 name="FP_txtBuyHouse">
+   						<select name="FP_optBuyHousePeriod">
+   							<option value="NN">None
+   							<option value="DY">Days
+   							<option value="MM">Month
+   							<option value="YR">Year
+   						</select>
+   					</td>
+   				</tr>
+   				<tr>
+   					<td width="40%" >Planning to buy/upgrade car</td>
+   					<td width="40%" colspan="3">Period&nbsp; 
+   						<input type="textbox" size=3 maxlength=2  name="FP_txtBuyCar">
+   						<select name="FP_optBuyCarPeriod">
+   							<option value="NN">None
+   							<option value="DY">Days
+   							<option value="MM">Month
+   							<option value="YR">Year
+   						</select>
+   					</td>
+   				</tr>
+   				<tr>
+   					<td width="40%" >Preferred Make</td>
+   					<td width="40%" colspan="3"><input type="textbox" name="FP_txtPreferredMake"></td>
+   				</tr>
+   				<tr>
+   					<td width="40%" >Preferred mode of financing</td>				
+   					<td width="40%" colspan="3">
+   						<input type="radio" name="FP_radFinMode" value="SF">Self financed
+   						<input type="radio" name="FP_radFinMode" value="LN">Loan
+   						<input type="radio" name="FP_radFinMode" value="OF">Official					
+   					</td>
+   				</tr>
+   				<tr>
+   					<td width="40%" >Expected Expense on education of children</td>
+   					<td width="40%" colspan="3">Period&nbsp; 
+   						<input type="textbox" size=3 maxlength=2  name="FP_txtExpenseOnEducation">
+   						<select name="FP_optExpEdu">
+   							<option value="NN">None
+   							<option value="DY">Days
+   							<option value="MM">Month
+   							<option value="YR">Year
+   						</select>
+   					</td>
+   				</tr>
+   				<tr>
+   					<td width="40%" >Expected Expense on marriage of children</td>
+   					<td width="40%" colspan="3">Period&nbsp; 
+   						<input type="textbox" size=3 maxlength=2  name="FP_txtExpenseOnMarriage">
+   						<select name="FP_optExpMarr">
+   							<option value="NN">None
+   							<option value="DY">Days
+   							<option value="MM">Month
+   							<option value="YR">Year
+   						</select>
+   					</td>
+   				</tr>
+   				<tr>
+   					<td width="40%" >Have you made provisions for above expenses</td>				
+   					<td width="40%" colspan="3">
+   						<input type="text" name="FP_txtProvForExpenses" >
+   					</td>
+   				</tr>
+
+   				<tr>
+   					<td width="40%" >When do you want to retire?</td>				
+   					<td width="40%" colspan="3">
+   						<input type="text" name="FP_txtRetireDate" id="FP_txtRetireDate">
+   						<input  type="button" value="..." onClick="javascript:show_calendar('frmCrf.FP_txtRetireDate');">
+   					</td>
+   				</tr>
+   				<tr>
+   					<td width="40%" >Your knowledge about investments </td>				
+   					<td width="40%" colspan="3">
+   						<input type="radio" name="FP_radKnowInvestments" value="GD">Good
+   						<input type="radio" name="FP_radKnowInvestments" value="SO">some/not in depth
+   						<input type="radio" name="FP_radKnowInvestments" value="LR">Learning				
+   					</td>
+   				</tr>
+   				<tr>
+   					<td width="40%" >Your investment goal </td>				
+   					<td width="40%" colspan="3">
+   						<input type="radio" name="FP_radInvestmentGoal" value="FG">Fast Growth
+   						<input type="radio" name="FP_radInvestmentGoal" value="RG">Regular Income/Growth
+   						<input type="radio" name="FP_radInvestmentGoal" value="RI">Regular income	
+   					</td>
+   				</tr>
+   				<tr>
+   					<td width="40%" >Your investment horizon</td>				
+   					<td width="40%" colspan="3">
+   						<input type="radio" name="FP_radInvestmentHZ" value="<=2">Up to 2 yrs
+   						<input type="radio" name="FP_radInvestmentHZ" value="2-5">2-5 yrs
+   						<input type="radio" name="FP_radInvestmentHZ" value=">=5">More than 5 yrs		
+   					</td>
+   				</tr> -->
+   				<tr bgcolor="#e8e8c4" class= "fonts">
+   					<td width="35%" bgcolor="#e8e8c4" class= "fonts" >Who advices you for investments?</td>				
+   					<td width="50%" colspan="3" bgcolor="#e8e8c4" class= "fonts">
+   						<input type="radio" name="FP_radInvestmentsAdvice" value="SF" onClick="showOthRad(this,document.frmCrf.FP_txtInvestAdviceOther)">Self
+   						<input type="radio" name="FP_radInvestmentsAdvice" value="CA" onClick="showOthRad(this,document.frmCrf.FP_txtInvestAdviceOther)">Chartered Accountant
+   						<input type="radio" name="FP_radInvestmentsAdvice" value="FA" onClick="showOthRad(this,document.frmCrf.FP_txtInvestAdviceOther)">Financial Advisor	<BR>	
+   						<input type="radio" name="FP_radInvestmentsAdvice" value="OT" onClick="showOthRad(this,document.frmCrf.FP_txtInvestAdviceOther)">Others			
+   						<input type="text" name="FP_txtInvestAdviceOther" disabled MaxLength = "30">		
+   					</td>
+   				</tr>			
+   				<tr bgcolor="#ffffee" class= "fonts">
+   					<td width="35%" bgcolor="#ffffee" class= "fonts">Would you like IDBI bank to help you plan your investments?</td>		
+   					<td width="50%" colspan="3" >
+   						<input type="radio" name="FP_radInvestmentsAdviceFrIDBI" value="Y">Yes
+   						<input type="radio" name="FP_radInvestmentsAdviceFrIDBI" value="N">No
+   					</td>
+   				</tr>			
+   				<tr bgcolor="#e8e8c4" class= "fonts">
+   					<td width="35%" rowspan="6" valign="top" bgcolor="#e8e8c4" class= "fonts">Send me information on</td>		
+   					<td width="10%" valign="top"  bgcolor="#e8e8c4" class= "fonts">Banking</td>
+   					<td colspan="2" bgcolor="#e8e8c4" class= "fonts" >
+   						<input type="checkbox" name="FP_chkSavingsAc" value="Y">SavingsA/c
+   						<input type="checkbox" name="FP_chkDeposits" value="Y">Deposits
+   						<input type="checkbox" name="FP_chkPension" value="Y">Pension Accounts
+   					</td>				
+   				</tr>			
+   				<tr bgcolor="#ffffee" class= "fonts">
+   					<td width="10%" valign="top" bgcolor="#ffffee" class= "fonts">Investments</td>
+   					<td colspan="2" width="30%" bgcolor="#ffffee" class= "fonts">
+   						<input type="checkbox" name="FP_chkMFs" value="Y">Mutual Funds
+   						<input type="checkbox" name="FP_chkIPOs" value="Y">IPOs
+   						<input type="checkbox" name="FP_chkBonds" value="Y">Bonds
+   					</td>				
+   				</tr>			
+   				<tr bgcolor="#e8e8c4" class= "fonts">
+   					<td width="10%" valign="top" bgcolor="#e8e8c4" class= "fonts">Insurance</td>
+   					<td colspan="2" width="30%" bgcolor="#e8e8c4" class= "fonts">
+   						<input type="checkbox" name="FP_chkLife" value="Y" bgcolor="#e8e8c4" class= "fonts">Life
+   						<input type="checkbox" name="FP_chkNonLife" value="Y" bgcolor="#e8e8c4" class= "fonts">NonLife					
+   					</td>				
+   				</tr>			
+   				<tr bgcolor="#ffffee" class= "fonts">
+   					<td width="10%" bgcolor="#ffffee" class= "fonts" >Cards</td>
+   					<td colspan="2" width="30%" bgcolor="#ffffee" class= "fonts">
+   						<input type="checkbox" name="FP_chkDebitCards" value="Y">DebitCards
+   						<input type="checkbox" name="FP_chkGC" value="Y">Gift Card
+   						<input type="checkbox" name="FP_chkWCC" value="Y">World Currency Card
+   					</td>				
+   				</tr>			
+   				<tr bgcolor="#e8e8c4" class= "fonts">
+   					<td width="10%" bgcolor="#e8e8c4" class= "fonts" >Forex</td>
+   					<td colspan="2" width="30%" bgcolor="#e8e8c4" class= "fonts">
+   						<input type="checkbox" name="FP_chkFC" value="Y">Foreign Currency
+   						<input type="checkbox" name="FP_chkTC" value="Y">Travellers cheque
+   					</td>				
+   				</tr>			
+   				<tr bgcolor="#ffffee" class= "fonts">
+   					<td width="10%" bgcolor="#ffffee" class= "fonts" >Business Banking</td>
+   					<td colspan="2" width="30%" bgcolor="#ffffee" class= "fonts">
+   						<input type="checkbox" name="FP_chkBB" value="Y">Business Banking
+   					</td>				
+   				</tr>
+			     <TR>
+               <td align="middle" bgcolor="#cccc99" colspan="4"> 
+                 <INPUT id=button1 type="button" value="<< Previous" name=button1 onClick="changeTab(0,5)">
+				&nbsp;&nbsp;&nbsp;&nbsp;
+                 <input type="submit" name="Submit" value="Save" > 
+                 &nbsp;&nbsp;&nbsp;&nbsp;
+                 <input type="reset" name="Reset" value="Undo"> 
+                   &nbsp;&nbsp;&nbsp;&nbsp;
+                 <input type="button" name="Button" value="Cancel" onClick="window.location='vendors.asp'"> 
+               </td></TR>
+                </table>
+   					</td>				
+   				</tr>
+   			</TABLE>
+   		</div></DIV></TD></TR>
+</TBODY></TABLE><BR>					
+   </form>
+   
+   </body>
+</html>

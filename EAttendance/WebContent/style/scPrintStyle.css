@@ -1,0 +1,38 @@
+.clsDoNotPrint
+{
+	display: none;
+}
+BODY.body
+{
+	BACKGROUND-COLOR: white;
+    	FONT-FAMILY: Arial, 'MS Sans Serif';
+    	FONT-SIZE: 9pt;
+}
+.clsPageBreak
+{
+	page-break-before:always
+}
+.clsPrintTable
+{
+	FONT-FAMILY: Arial, 'MS Sans Serif';
+	FONT-SIZE: 8pt;
+	TEXT-ALIGN: left;
+	PADDING-LEFT: 2px;
+	BORDERCOLOR: silver;
+	BORDER-TOP:white thin;
+	BORDER-BOTTOM:white thin;
+	BORDER-LEFT:white thin;
+	BORDER-RIGHT:white thin;	
+}
+.clsPrintTableNoBorder
+{  
+    	BORDERCOLOR: silver;
+	BORDER-TOP:white 0px;
+	BORDER-BOTTOM:white 0px;
+	BORDER-LEFT:white 0px;
+	BORDER-RIGHT:white 0px;
+	FONT-SIZE: 8pt;
+	FONT-FAMILY: Arial, 'MS Sans Serif';
+   	TEXT-ALIGN: left;
+	PADDING-LEFT: 2px;
+}

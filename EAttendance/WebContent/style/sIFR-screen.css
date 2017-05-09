@@ -1,0 +1,47 @@
+/*---- sIFR ---*/
+.sIFR-flash {
+	visibility: visible !important;
+	margin: 0;
+	padding: 0;
+}
+
+.sIFR-replaced, .sIFR-ignore {
+	visibility: visible !important;
+}
+
+.sIFR-alternate {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 0;
+	height: 0;
+	display: block;
+	overflow: hidden;
+}
+
+/*---- Header styling ---*/
+
+
+/*.sIFR-active h1 {
+  visibility: hidden;
+  line-height: 1.0em;
+  width: 100%;
+}*/
+
+.sIFR-active h2 {
+  visibility: hidden;
+  line-height: 1.0em;
+  width: 100%;
+}
+
+.sIFR-active h3 {
+  visibility: hidden;
+  line-height: 1.0em;
+  width: 100%;
+}
+
+.sIFR-active .home dt {
+  visibility: hidden;
+  line-height: 1.0em;
+  width: 100%;
+}

@@ -1,0 +1,12 @@
+* { margin: 0; padding: 0; }
+body { padding: 15px; background: #9DAAA6 url(images/grad1.png) 0 0 repeat-x; color: #fff;  font: bold 11px/1em Tahoma, Geneva, Verdana, sans-serif;}
+h1 {border-bottom: solid 1px #d9d9d9;font: bold 11px/1em Tahoma, Geneva, Verdana, sans-serif; font-weight: normal; font-size: 150%; text-indent: 838px; letter-spacing: 3px; }
+cite { float: right; }
+ul.classic { list-style: disc; margin-bottom: 1em; padding-left: 2em; }
+div.section { clear: both; padding-top: 50px; }
+.table1 { float: right; margin-bottom: 2em; border: solid 1px #eee; }
+.table1 caption { color: #fff; text-align: center; padding-bottom: 5px; }
+.table1 th, .table1 td { padding: 7px; }
+.table1 th, .table1 thead td { background-color: lightyellow; color: #000; }
+.table1 tbody td { background-color: #fff; color: #000; }
+.table1 tbody th { text-align: right; }

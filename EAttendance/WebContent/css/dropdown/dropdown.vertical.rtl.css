@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+
+@import "dropdown.vertical.css";
+
+ul.dropdown-vertical-rtl {
+ float: right;
+}
+
+ul.dropdown-vertical-rtl ul {
+ left: auto !important;
+ right: 99%;
+}
+
+ul.dropdown-vertical-rtl li {
+ text-align: right;
+}

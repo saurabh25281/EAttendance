@@ -1,0 +1,28 @@
+body {margin:0; font-family:Verdana, Arial, Helvetica; font-size:14px}
+#content {padding:20px}
+/* to set the dialog box width  */
+#dialog {position:absolute; width:350px; padding:10px; z-index:200; background:#ffffff}
+/************************************** */
+
+
+/* to set the dialog box header width  */
+#dialog-header {display:block; position:relative; width:336px; padding:3px 6px 7px; height:10px; font-size:14px; font-weight:bold}
+/************************************** */
+#dialog-title {float:left}
+#dialog-close {float:right; cursor:pointer; margin:3px 3px 0 0; height:11px; width:11px; background:url(./images/dialog_close.gif) no-repeat}
+
+/* to set the dialog box height  */
+#dialog-content {display:block; height:75px; padding:6px; color:#666666; font-size:13px}
+/************************************** */
+
+
+/*#dialog-mask {position:absolute; top:0; left:0; min-height:0%; width:0%; background:#FFFFFF; opacity:.75; filter:alpha(opacity=75); z-index:100}*/
+#dialog-mask {position:absolute; top:0; left:0; min-height:100%; width:100%; background:#FFF; opacity:.75; filter:alpha(opacity=75); z-index:100}
+.error {background:#fff url(./images/error_bg.jpg) bottom right no-repeat; border:1px solid #924949; border-top:none}
+.errorheader {background:url(./images/error_header.gif) repeat-x; color:#6f2c2c; border:1px solid #924949; border-bottom:none}
+.warning {background:#fff  bottom right no-repeat; border:1px solid #924949; border-top:none}
+.warningheader {background:url(./images/warning_header.gif) repeat-x; color:#924949; border:1px solid #924949; border-bottom:none}
+.success {background:#fff url(./images/success_bg.jpg) bottom right no-repeat; border:1px solid #60a174; border-top:none}
+.successheader {background:url(./images/success_header.gif) repeat-x; color:#3c7f51; border:1px solid #60a174; border-bottom:none}
+.prompt {background:#fff url(./images/prompt_bg.jpg) bottom right no-repeat; border:1px solid #4f6d81; border-top:none}
+.promptheader {background:url(./images/prompt_header.gif) repeat-x; color:#355468; border:1px solid #4f6d81; border-bottom:none}
