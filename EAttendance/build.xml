@@ -1,6 +1,6 @@
 <project basedir="." default="build" name="EAttendance">
 	<taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask"/>
-	<target name="build">
+	<target name="verifyVulnerabilityThreshold">
 		<xmltask source="demo.testfire.net.xml">
 			<call path="XmlReport/Summary/Hosts/Host/TotalHighSeverityIssues">
 				<param name="TotalHighSeverityIssues" path="text()" default="n/a"/>
@@ -38,9 +38,7 @@
 		        <equals arg1="${compareResult}" arg2="1" />
 		    </condition>
 		</fail>
-		
-		
+			
 	</target>
-	
 	
 </project>
