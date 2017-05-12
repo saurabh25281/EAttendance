@@ -1,4 +1,4 @@
-<project basedir="./../../../Upload DAST Report/workspace/" default="build" name="EAttendance">
+<project basedir="./../../../Publish DAST Report/workspace/" default="build" name="EAttendance">
 	<taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask"/>
 	<target name="verifyVulnerabilityThreshold">
 		<xmltask source="demo.testfire.net.xml">
@@ -40,5 +40,4 @@
 		</fail>
 			
 	</target>
-	
 </project>
