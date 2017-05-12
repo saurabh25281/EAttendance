@@ -33,7 +33,7 @@
 		
 		<local name="compareResult" />
 		<compare arg1="${TotalHighSeverityIssues}" arg2="${VulnerabilityThreshold}" result="compareResult" />
-		<fail message="TotalHighSeverityIssues (${TotalHighSeverityIssues}) is greater than the threshold 10 and hence stopping the pipeline!">
+		<fail message="TotalHighSeverityIssues: ${TotalHighSeverityIssues} is greater than the Threshold Vulnerability Count: ${VulnerabilityThreshold} and hence stopping the pipeline!">
 		    <condition>
 		        <equals arg1="${compareResult}" arg2="1" />
 		    </condition>
