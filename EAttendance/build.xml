@@ -2,7 +2,7 @@
 <project basedir="." name="EAttendance">
 	<taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask"/>
 	<target name="verifyVulnerabilityThreshold">
-		<xmltask source="demo.testfire.net.xml">
+		<xmltask source="./../demo.testfire.net.xml">
 			<call path="XmlReport/Summary/Hosts/Host/TotalHighSeverityIssues">
 				<param name="TotalHighSeverityIssues" path="text()" default="n/a"/>
 				<actions>
