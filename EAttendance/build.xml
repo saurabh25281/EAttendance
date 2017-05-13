@@ -164,6 +164,10 @@
 		    </war>
 		</target-->
 	
+		<presetdef name="javac">
+		    <javac includeantruntime="false" />
+		</presetdef>
+	
 		<path id="compile.classpath">
 			<fileset dir="WebContent/WEB-INF/lib">
 				<include name="*.jar"/>
@@ -184,7 +188,6 @@
 		<target name="buildWar" depends="compile">
 			<war destfile="EAttendance.war" webxml="WebContent/WEB-INF/web.xml">
 				<fileset dir="WebContent"/>
-				<lib dir="WebContent/WEB-INF/lib"/>
 				<classes dir="build/classes"/>
 			</war>
 		</target>
