@@ -193,7 +193,7 @@
 		</target>
 		
 		<target name="clean">
-			<!--delete dir="dist" /-->
+			<!--delete dir="dist" /a-->
 			<delete dir="build" />
 		</target>
 	
