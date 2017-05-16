@@ -76,4 +76,32 @@
 		<delete dir="build" />
 	</target>
 	
+	
+	
+	<taskdef name="wsInstallApp" classname="com.ibm.websphere.ant.tasks.InstallApplication"/>
+	
+	<property name="hostName" value="localhost" />
+	<property name="connType" value="SOAP" />
+	<property name="port" value="8880" />
+	<property name="userId" value="wasadmin" />
+	<property name="password" value="wasadmin" />
+	<property name="warDir" value="c:/temp/antbuild/dist" />
+	<property name="warFile" value="EAttendance.war" />
+	<property name="appName" value="EAttendance" />
+	<property name="wasHome.dir" value="c:/was7/appserver" />
+	
+	<!-- installation Target-->
+	<target name="deployWar">
+	<wsInstallApp 
+		ear="${warDir}/${warFile}" 
+		options="-appname ${appName} -usedefaultbindings"
+		wasHome="${wasHome.dir}" 
+		conntype="${connType}"
+		port="${port}" 
+		host="${hostName}" 
+		user="${userId}" 
+		password="${password}" />
+	</target>
+
+	
 </project>
