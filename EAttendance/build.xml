@@ -182,13 +182,13 @@
 			<!--mkdir dir="dist" /-->
 		</target>
 
-		<pathconvert property="classpathProp" refid="compile.classpath"/>
+		<!--pathconvert property="classpathProp" refid="compile.classpath"/-->
 	
 		<target name="compile" depends="init" >
 			<javac destdir="build/classes" debug="true" srcdir="src">
 				<classpath refid="compile.classpath"/>
 			</javac>
-			<echo message= "Classpath is ${classpathProp}"/>
+			<!--echo message= "Classpath is ${classpathProp}"/-->
 		</target>
 		
 		<target name="buildWar" depends="compile">
@@ -196,7 +196,6 @@
 				<fileset dir="WebContent"/>
 				<classes dir="build/classes"/>
 			</war>
-			<echo message= "Classpath is ${classpathProp}"/>
 		</target>
 		
 		<target name="clean">
