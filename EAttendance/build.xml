@@ -172,21 +172,25 @@
 			<fileset dir="WebContent/WEB-INF/lib">
 				<include name="*.jar"/>
 			</fileset>
+			<fileset dir="C:\Users\saurabh.a.ghosh\Documents\Softwares\Apache Tomcat v7.0\lib">
+				<include name="*.jar"/>
+			</fileset>
 		</path>
 		
 		<target name="init">
 			<mkdir dir="build/classes"/>
 			<!--mkdir dir="dist" /-->
 		</target>
-		
+
+		<pathconvert property="classpathProp" refid="compile.classpath"/>
+	
 		<target name="compile" depends="init" >
 			<javac destdir="build/classes" debug="true" srcdir="src">
 				<classpath refid="compile.classpath"/>
 			</javac>
+			<echo message= "Classpath is ${classpathProp}"/>
 		</target>
 		
-		<pathconvert property="classpathProp" refid="compile.classpath"/>
-	
 		<target name="buildWar" depends="compile">
 			<war destfile="EAttendance.war" webxml="WebContent/WEB-INF/web.xml">
 				<fileset dir="WebContent"/>
