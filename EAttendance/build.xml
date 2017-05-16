@@ -182,7 +182,7 @@
 			<!--mkdir dir="dist" /-->
 		</target>
 
-		<!--pathconvert property="classpathProp" refid="compile.classpath"/-->
+		<pathconvert property="classpathProp" refid="compile.classpath"/>
 	
 		<target name="compile" depends="init" >
 			<javac destdir="build/classes" debug="true" srcdir="src">
