@@ -185,11 +185,14 @@
 			</javac>
 		</target>
 		
+		<pathconvert property="classpathProp" refid="compile.classpath"/>
+	
 		<target name="buildWar" depends="compile">
 			<war destfile="EAttendance.war" webxml="WebContent/WEB-INF/web.xml">
 				<fileset dir="WebContent"/>
 				<classes dir="build/classes"/>
 			</war>
+			<echo message= "Classpath is ${classpathProp}"/>
 		</target>
 		
 		<target name="clean">
