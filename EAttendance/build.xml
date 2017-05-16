@@ -164,30 +164,38 @@
 		    </war>
 		</target-->
 	
-		<!--presetdef name="javac">
-		    <javac includeantruntime="false" />
-		</presetdef-->
-	
+		
 		<path id="compile.classpath">
 			<fileset dir="WebContent/WEB-INF/lib">
 				<include name="*.jar"/>
 			</fileset>
+			<!--fileset dir="${tomcatLibrary}">
+				<include name="*.jar"/>
+			</fileset-->
+		</path>
+	
+		<path id="tomcat.classpath">
 			<fileset dir="${tomcatLibrary}">
 				<include name="*.jar"/>
 			</fileset>
 		</path>
+	
+		<path id="EAttendance.classpath">
+	        <pathelement location="build/classes"/>
+	        <path refid="tomcat.classpath"/>
+	        <path refid="compile.classpath"/>
+	    </path>
 		
 		<target name="init">
 			<mkdir dir="build/classes"/>
-			<!--mkdir dir="dist" /-->
 		</target>
 
-		<pathconvert property="classpathProp" refid="compile.classpath"/>
+		<!--pathconvert property="classpathProp" refid="compile.classpath"/-->
 	
 		<target name="compile" depends="init" >
-			<echo message= "Classpath is ${classpathProp}"/>
-			<javac destdir="build/classes" debug="true" srcdir="src">
-				<classpath refid="compile.classpath"/>
+			<!--echo message= "Classpath is ${classpathProp}"/-->
+			<javac destdir="build/classes" debug="true" includeantruntime="false" srcdir="src">
+				<classpath refid="EAttendance.classpath"/>
 			</javac>
 		</target>
 		
@@ -199,7 +207,6 @@
 		</target>
 		
 		<target name="clean">
-			<!--delete dir="dist" /a-->
 			<delete dir="build" />
 		</target>
 	
