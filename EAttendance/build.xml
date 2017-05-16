@@ -190,7 +190,7 @@
 			<mkdir dir="build/classes"/>
 		</target>
 
-		<pathconvert property="classpathProp" refid="compile.classpath"/>
+		<pathconvert property="classpathProp" refid="tomcat.classpath"/>
 	
 		<target name="compile" depends="init" >
 			<echo message= "Classpath is ${classpathProp}"/>
