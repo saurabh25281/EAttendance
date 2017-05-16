@@ -190,10 +190,10 @@
 			<mkdir dir="build/classes"/>
 		</target>
 
-		<!--pathconvert property="classpathProp" refid="compile.classpath"/-->
+		<pathconvert property="classpathProp" refid="EAttendance.classpath"/>
 	
 		<target name="compile" depends="init" >
-			<!--echo message= "Classpath is ${classpathProp}"/-->
+			<echo message= "Classpath is ${classpathProp}"/>
 			<javac destdir="build/classes" debug="true" includeantruntime="false" srcdir="src">
 				<classpath refid="EAttendance.classpath"/>
 			</javac>
