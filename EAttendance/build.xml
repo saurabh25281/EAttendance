@@ -171,10 +171,11 @@
 		<path id="compile.classpath">
 			<fileset dir="WebContent/WEB-INF/lib">
 				<include name="*.jar"/>
+				<include name="${tomcatLibrary}/*.jar"/>
 			</fileset>
-			<fileset dir="${tomcatLibrary}">
+			<!--fileset dir="${tomcatLibrary}">
 				<include name="*.jar"/>
-			</fileset>
+			</fileset-->
 		</path>
 		
 		<target name="init">
