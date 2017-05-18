@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="compile" name="EAttendance">
+	<property name="build.home"    		   value="${basedir}/build"/>
+	<property name="src.home"     		   value="${basedir}/src"/>
+	
+	<!-- Ounce Windows Installation Directory -->
+	<property name="ounce.installDir" value="C:\\Program Files (x86)\\IBM\\AppScanSource"/>
+
+	
+	<taskdef resource="com/ouncelabs/ounceant/task/ounce.xml" classpath="ounceant.jar"/>
+	<target name="clean">
+		<delete dir="build/classes"/>
+		<delete file="EAttendace_Ounce.paf" />
+		<delete file="EAttendace_Ounce.ppf" />
+	</target>
+	
+		  
+	<target depends="clean" name="cleanall"/>
+	<target depends="build-subprojects,build-project" name="build"/>
+	<target name="build-subprojects"/>
+	
+	<target depends="init" name="build-project">
+		<echo message="${ant.project.name}: ${ant.file}"/>
+		<javac debug="true" debuglevel="${debuglevel}" destdir="build/classes" includeantruntime="false" source="${source}" target="${target}">
+			<src path="src"/>
+			<src path=".apt_generated"/>
+			<classpath refid="EAttendance.classpath"/>
+		</javac>
+	</target>
+	<target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+	
+	<target name="compile" depends="clean"
+	   description="Compile Java sources">
+	    <!-- Compile Java classes as necessary -->
+	    <mkdir dir="${build.home}"/>
+	    <javac srcdir="${src.home}"
+	           destdir="${build.home}"  >
+	    </javac>
+		<!-- Ounce specific property definition begins here.  Note that since ant's
+				         "property" task creates immutable properties we would want to use
+				         ant-contrib's "var" task instead if there was more than one project
+				         or application.  See the Ounce Utility Guide for more information -->
+				  
+				  <ounceCreateProject
+				  	    name="EAttendance_Ounce_compile"
+				        workingDir="C:\\AppScanWorkSpace"  
+
+						>
+				      <ounceSourceRoot dir="{src.home}" />		
+				<ounceWeb webContextRoot="${basedir}/WebContent"  analyzeStrutsFramework="true"  importStrutsValidation="true" />
+				
+
+				<!--      <ounceExclude dir="src/excludeme"/>
+				      <ounceExclude file="src/bad.java"/>-->
+				        
+				  </ounceCreateProject>
+					
+				    <!-- No need to specify any other attributes for ounceCreateProject task.
+				         The javac integration will pick up the class path, source roots, etc. -->
+
+				    <!-- end Ounce additions here. -->
+			
+				     <!-- Project and Application are created, run a scan with the CLI. -->
+				      <ounceCli
+				        dir="${ounce.installDir}"
+				        script="cli_script.txt"
+				        output="cli_log.txt"/>
+	  
+	    
+	  </target>
+	  
+	  
+</project>

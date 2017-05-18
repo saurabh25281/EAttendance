@@ -1,0 +1,7 @@
+login https://acitibmsats01.solutionworks.com:9444/ase/ ACITIBMSATS01\admin1 Password@2 -acceptssl
+del EAttendance_Ounce
+new EAttendance_Ounce C:\AppScanWorkSpace
+cd EAttendance_Ounce
+im C:\AppScanWorkSpace\*.ppf
+scan C:\AppScanWorkSpace\EAttendance.ozasmt
+exit
