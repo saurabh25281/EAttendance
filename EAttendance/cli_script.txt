@@ -4,4 +4,5 @@ new EAttendance_Ounce C:\AppScanWorkSpace
 cd EAttendance_Ounce
 im C:\AppScanWorkSpace\*.ppf
 scan C:\AppScanWorkSpace\EAttendance.ozasmt
+publishassessase -folder C:\AppScanWorkSpace\EAttendance.ozasmt -name DemoApp
 exit
