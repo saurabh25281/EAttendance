@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project basedir="." default="compile" name="EAttendance">
-	<property name="build.home"    		   value="${basedir}/build"/>
 	<property name="src.home"     		   value="${basedir}/src"/>
 	
 	<!-- Ounce Windows Installation Directory -->
@@ -19,12 +18,7 @@
 	
 	<target name="compile" depends="clean"
 	   description="Compile Java sources">
-	    <!-- Compile Java classes as necessary -->
-	    <mkdir dir="${build.home}"/>
-	    <javac srcdir="${src.home}"
-	           destdir="${build.home}"  >
-	    </javac>
-		<!-- Ounce specific property definition begins here.  Note that since ant's
+	    <!-- Ounce specific property definition begins here.  Note that since ant's
 				         "property" task creates immutable properties we would want to use
 				         ant-contrib's "var" task instead if there was more than one project
 				         or application.  See the Ounce Utility Guide for more information -->
