@@ -23,19 +23,13 @@
 				         ant-contrib's "var" task instead if there was more than one project
 				         or application.  See the Ounce Utility Guide for more information -->
 				  
-				  <ounceCreateProject
-				  	    name="EAttendance_Ounce_compile"
-				        workingDir="C:\\AppScanWorkSpace"  
-
-						>
-				      <ounceSourceRoot dir="{src.home}" />		
-				<ounceWeb webContextRoot="${basedir}/WebContent"  analyzeStrutsFramework="true"  importStrutsValidation="true" />
-				
-
-				<!--      <ounceExclude dir="src/excludeme"/>
-				      <ounceExclude file="src/bad.java"/>-->
-				        
-				  </ounceCreateProject>
+					<ounceCreateProject
+						name="EAttendance_Ounce_compile"
+						workingDir="C:\\AppScanWorkSpace" >
+					<ounceSourceRoot dir="{src.home}" />		
+					<ounceWeb webContextRoot="${basedir}/WebContent"  analyzeStrutsFramework="true"  importStrutsValidation="true" />
+								        
+				  	</ounceCreateProject>
 					
 				    <!-- No need to specify any other attributes for ounceCreateProject task.
 				         The javac integration will pick up the class path, source roots, etc. -->
@@ -47,8 +41,5 @@
 				        dir="${ounce.installDir}"
 				        script="cli_script.txt"
 				        output="cli_log.txt"/>
-	  
 	  </target>
-	  
-	  
 </project>
