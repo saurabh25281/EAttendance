@@ -54,7 +54,6 @@
 				        script="cli_script.txt"
 				        output="cli_log.txt"/>
 	  
-	    
 	  </target>
 	  
 	  
