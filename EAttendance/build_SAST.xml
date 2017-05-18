@@ -14,19 +14,7 @@
 		<delete file="EAttendace_Ounce.ppf" />
 	</target>
 	
-		  
-	<target depends="clean" name="cleanall"/>
-	<target depends="build-subprojects,build-project" name="build"/>
-	<target name="build-subprojects"/>
 	
-	<target depends="init" name="build-project">
-		<echo message="${ant.project.name}: ${ant.file}"/>
-		<javac debug="true" debuglevel="${debuglevel}" destdir="build/classes" includeantruntime="false" source="${source}" target="${target}">
-			<src path="src"/>
-			<src path=".apt_generated"/>
-			<classpath refid="EAttendance.classpath"/>
-		</javac>
-	</target>
 	<target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
 	
 	<target name="compile" depends="clean"
