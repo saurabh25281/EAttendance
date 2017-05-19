@@ -64,7 +64,8 @@
 	<pathconvert property="classpathProp" refid="compile.classpath"/>
 
 	<target name="compile" depends="init" >
-		<echo message= "Classpath is ${classpathProp}"/>
+		<!--echo message= "Classpath is ${classpathProp}"/-->
+		<echo message= "Properties: ${build.properties}, tomcatLibrary=${tomcatLibrary}"/>
 		<javac destdir="build/classes" debug="true" includeantruntime="false" srcdir="src">
 			<classpath refid="compile.classpath"/>
 		</javac>
@@ -99,9 +100,7 @@
 			<delete file="EAttendace_Ounce.ppf" />
 		</target>
 		
-		<target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
-		
-		<target name="compile_ounce" depends="clean_ounce" description="Compile Java sources">
+		<target name="compile_ounce" depends="clean_ounce" description="SAST">
 	      	<ounceCreateProject name="EAttendance_Ounce_compile" workingDir="C:\\AppScanWorkSpace" >
 				<ounceSourceRoot dir="{src.home}" />		
 				<ounceWeb webContextRoot="${basedir}/WebContent"  analyzeStrutsFramework="true"  importStrutsValidation="true" />
