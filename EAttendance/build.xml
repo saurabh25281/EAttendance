@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project basedir="." name="EAttendance">
 	
-	<property file="${build.properties}"/>
+	<property file=".\${build.properties}"/>
 	<taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask"/>
 	<target name="verifyVulnerabilityThreshold">
 		<xmltask source="./../demo.testfire.net.xml">
