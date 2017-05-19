@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project basedir="." name="EAttendance">
+	
+	<property file="${build.properties}"/>
 	<taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask"/>
 	<target name="verifyVulnerabilityThreshold">
 		<xmltask source="./../demo.testfire.net.xml">
@@ -42,6 +44,9 @@
 	</target>
 	
 	
+	
+	
+	
 		
 	<path id="compile.classpath">
 		<fileset dir="WebContent/WEB-INF/lib">
@@ -75,6 +80,37 @@
 	<target name="clean">
 		<delete dir="build" />
 	</target>
+	
+	
+	
+	
+	
+	
+	
+	
+	<property name="src.home" value="${basedir}/src"/>
+	<!-- Ounce Windows Installation Directory -->
+		<property name="ounce.installDir" value="C:\\Program Files (x86)\\IBM\\AppScanSource"/>
+		
+		<taskdef resource="com/ouncelabs/ounceant/task/ounce.xml" classpath="ounceant.jar"/>
+		<target name="clean_ounce">
+			<delete dir="build/classes"/>
+			<delete file="EAttendace_Ounce.paf" />
+			<delete file="EAttendace_Ounce.ppf" />
+		</target>
+		
+		<target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+		
+		<target name="compile_ounce" depends="clean_ounce" description="Compile Java sources">
+	      	<ounceCreateProject name="EAttendance_Ounce_compile" workingDir="C:\\AppScanWorkSpace" >
+				<ounceSourceRoot dir="{src.home}" />		
+				<ounceWeb webContextRoot="${basedir}/WebContent"  analyzeStrutsFramework="true"  importStrutsValidation="true" />
+		  	</ounceCreateProject>
+			<ounceCli dir="${ounce.installDir}" script="cli_script.txt" output="cli_log.txt"/>
+		</target>
+	
+	
+	
 	
 	
 	
