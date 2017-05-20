@@ -52,13 +52,13 @@
 	<target name="verifySASTVulnerabilityThreshold">
 		<xmltask source="./../EAttendance.ozasmt">
 			<call path="AssessmentRun/AssessmentStats">
-				<param name="TotalHighSeverityIssuesSAST" path="@total_files" default="n/a"/>
+				<param name="TotalHighSeverityIssuesSAST" path="@total_high_high_finding" default="n/a"/>
 				<actions>
 					<echo>TotalHighSeverityIssuesSAST = @{TotalHighSeverityIssuesSAST}</echo>
 				</actions>
 			</call>
 			<call path="AssessmentRun/AssessmentStats">
-				<param name="TotalMediumSeverityIssuesSAST" path="@total_findings" default="n/a"/>
+				<param name="TotalMediumSeverityIssuesSAST" path="@total_med_high_finding" default="n/a"/>
 				<actions>
 					<echo>TotalMediumSeverityIssuesSAST = @{TotalMediumSeverityIssuesSAST}</echo>
 				</actions>
@@ -84,7 +84,7 @@
 		<local name="compareResult" />
 		<echo>SASTVulnerabilityThreshold = ${SASTVulnerabilityThreshold}</echo>
 		<compare arg1="${TotalHighSeverityIssuesSAST}" arg2="${SASTVulnerabilityThreshold}" result="compareResult" />
-		<fail message="TotalHighSeverityIssuesSAST: ${TotalHighSeverityIssuesSAST} is greater than the Threshold Vulnerability Count: ${SASTVulnerabilityThreshold} and hence stopping the pipeline!">
+		<fail message="TotalHighSeverityIssuesSAST: ${TotalHighSeverityIssuesSAST} is greater than the Threshold Vulnerability Count: ${VulnerabilityThresholdSAST} and hence stopping the pipeline!">
 		    <condition>
 		        <equals arg1="${compareResult}" arg2="1" />
 		    </condition>
