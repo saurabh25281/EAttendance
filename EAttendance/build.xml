@@ -2,22 +2,23 @@
 <project basedir="." name="EAttendance">
 	
 	<property file=".\${build.properties}"/>
-	<taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask"/>
-	<target name="verifyVulnerabilityThreshold">
+	<taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask" />
+	
+	<target name="verifyDASTVulnerabilityThreshold">
 		<xmltask source="./../demo.testfire.net.xml">
 			<call path="XmlReport/Summary/Hosts/Host/TotalHighSeverityIssues">
-				<param name="TotalHighSeverityIssues" path="text()" default="n/a"/>
+				<param name="TotalHighSeverityIssuesDAST" path="text()" default="n/a"/>
 				<actions>
-					<echo>TotalHighSeverityIssues = @{TotalHighSeverityIssues}</echo>
+					<echo>TotalHighSeverityIssuesDAST = @{TotalHighSeverityIssuesDAST}</echo>
 				</actions>
 			</call>
 			<call path="XmlReport/Summary/Hosts/Host/TotalMediumSeverityIssues">
-				<param name="TotalMediumSeverityIssues" path="text()" default="n/a"/>
+				<param name="TotalMediumSeverityIssuesDAST" path="text()" default="n/a"/>
 				<actions>
-					<echo>TotalMediumSeverityIssues = @{TotalMediumSeverityIssues}</echo>
+					<echo>TotalMediumSeverityIssuesDAST = @{TotalMediumSeverityIssuesDAST}</echo>
 				</actions>
 			</call>
-			<copy path="XmlReport/Summary/Hosts/Host/TotalHighSeverityIssues/text()" property="TotalHighSeverityIssues"/>
+			<copy path="XmlReport/Summary/Hosts/Host/TotalHighSeverityIssues/text()" property="TotalHighSeverityIssuesDAST"/>
 		</xmltask>
 	
 		<!-- returns the same results as Java's compareTo() method: -->
@@ -35,14 +36,60 @@
 		</scriptdef>
 		
 		<local name="compareResult" />
-		<compare arg1="${TotalHighSeverityIssues}" arg2="${VulnerabilityThreshold}" result="compareResult" />
-		<fail message="TotalHighSeverityIssues: ${TotalHighSeverityIssues} is greater than the Threshold Vulnerability Count: ${VulnerabilityThreshold} and hence stopping the pipeline!">
+		<echo>VulnerabilityThresholdDAST = ${VulnerabilityThresholdDAST}</echo>
+		<compare arg1="${TotalHighSeverityIssuesDAST}" arg2="${VulnerabilityThresholdDAST}" result="compareResult" />
+		<fail message="TotalHighSeverityIssuesDAST: ${TotalHighSeverityIssuesDAST} is greater than the Threshold Vulnerability Count: ${VulnerabilityThresholdDAST} and hence stopping the pipeline!">
 		    <condition>
 		        <equals arg1="${compareResult}" arg2="1" />
 		    </condition>
 		</fail>			
 	</target>
 	
+	
+	
+	
+	
+	<target name="verifySASTVulnerabilityThreshold">
+		<xmltask source="./../EAttendance.ozasmt">
+			<call path="AssessmentRun/AssessmentStats">
+				<param name="TotalHighSeverityIssuesSAST" path="@total_files" default="n/a"/>
+				<actions>
+					<echo>TotalHighSeverityIssuesSAST = @{TotalHighSeverityIssuesSAST}</echo>
+				</actions>
+			</call>
+			<call path="AssessmentRun/AssessmentStats">
+				<param name="TotalMediumSeverityIssuesSAST" path="@total_findings" default="n/a"/>
+				<actions>
+					<echo>TotalMediumSeverityIssuesSAST = @{TotalMediumSeverityIssuesSAST}</echo>
+				</actions>
+			</call>
+			<copy path="AssessmentRun/AssessmentStats/@total_files" property="TotalHighSeverityIssuesSAST"/>
+		</xmltask>
+	
+		<!-- returns the same results as Java's compareTo() method: -->
+		<!-- -1 if arg1 < arg2, 0 if arg1 = arg2, 1 if arg1 > arg2 -->
+		<scriptdef language="javascript" name="compare">
+		    <attribute name="arg1" />
+		    <attribute name="arg2" />
+		    <attribute name="result" />
+		    <![CDATA[
+		    var val1 = parseInt(attributes.get("arg1"));
+		    var val2 = parseInt(attributes.get("arg2"));
+			var result = (val1 > val2 ? 1 : (val1 < val2 ? -1 : 0));
+			//self.log(result);
+		    project.setProperty(attributes.get("result"), result);
+		    ]]>
+		</scriptdef>
+		
+		<local name="compareResult" />
+		<echo>SASTVulnerabilityThreshold = ${SASTVulnerabilityThreshold}</echo>
+		<compare arg1="${TotalHighSeverityIssuesSAST}" arg2="${SASTVulnerabilityThreshold}" result="compareResult" />
+		<fail message="TotalHighSeverityIssuesSAST: ${TotalHighSeverityIssuesSAST} is greater than the Threshold Vulnerability Count: ${SASTVulnerabilityThreshold} and hence stopping the pipeline!">
+		    <condition>
+		        <equals arg1="${compareResult}" arg2="1" />
+		    </condition>
+		</fail>			
+	</target>
 	
 	
 	
@@ -65,7 +112,7 @@
 
 	<target name="compile" depends="init" >
 		<!--echo message= "Classpath is ${classpathProp}"/-->
-		<echo message= "Properties: ${build.properties}, tomcatLibrary=${tomcatLibrary}"/>
+		<!--echo message= "Properties: ${build.properties}, tomcatLibrary=${tomcatLibrary}"/-->
 		<javac destdir="build/classes" debug="true" includeantruntime="false" srcdir="src">
 			<classpath refid="compile.classpath"/>
 		</javac>
@@ -83,60 +130,72 @@
 	</target>
 	
 	
-	
-	
-	
-	
-	
-	
-	<property name="src.home" value="${basedir}/src"/>
-	<!-- Ounce Windows Installation Directory -->
-		<property name="ounce.installDir" value="C:\\Program Files (x86)\\IBM\\AppScanSource"/>
 		
-		<taskdef resource="com/ouncelabs/ounceant/task/ounce.xml" classpath="ounceant.jar"/>
-		<target name="clean_ounce">
-			<delete dir="build/classes"/>
-			<delete file="EAttendace_Ounce.paf" />
-			<delete file="EAttendace_Ounce.ppf" />
+	
+	
+	
+	<!-- ==================== File and Directory Names ======================== -->
+
+		<property name="build.home"		value="${basedir}/bin"/>
+		<property name="src.home"		value="${basedir}/src"/>
+		<!--property name="classpath.home"	value="${basedir}/WebContent/WEB-INF/lib/antlr-2.7.6.jar;${basedir}/WebContent/WEB-INF/lib/asm-3.3.jar;${basedir}/WebContent/WEB-INF/lib/asm-commons-3.3.jar;${basedir}/WebContent/WEB-INF/lib/asm-tree-3.3.jar;${basedir}/WebContent/WEB-INF/lib/commons-beanutils-1.7.0.jar;${basedir}/WebContent/WEB-INF/lib/commons-collections-3.1.jar;${basedir}/WebContent/WEB-INF/lib/commons-fileupload-1.2.2.jar;${basedir}/WebContent/WEB-INF/lib/commons-io-2.0.1.jar;${basedir}/WebContent/WEB-INF/lib/commons-lang-2.5.jar;${basedir}/WebContent/WEB-INF/lib/commons-logging-1.1.1.jar;${basedir}/WebContent/WEB-INF/lib/commons-logging-api-1.1.jar;${basedir}/WebContent/WEB-INF/lib/displaytag-1.2.jar;${basedir}/WebContent/WEB-INF/lib/displaytag-export-poi-1.2.jar;${basedir}/WebContent/WEB-INF/lib/displaytag-portlet-1.2.jar;${basedir}/WebContent/WEB-INF/lib/dom4j-1.6.1.jar;${basedir}/WebContent/WEB-INF/lib/ejb3-persistence.jar;${basedir}/WebContent/WEB-INF/lib/freemarker-2.3.18.jar;${basedir}/WebContent/WEB-INF/lib/hibernate-annotations.jar;${basedir}/WebContent/WEB-INF/lib/hibernate-commons-annotations-3.1.0.GA.jar;${basedir}/WebContent/WEB-INF/lib/hibernate-commons-annotations.jar;${basedir}/WebContent/WEB-INF/lib/hibernate-core-3.3.0.SP1.jar;${basedir}/WebContent/WEB-INF/lib/hibernate-jpa-2.0-api-1.0.1.Final.jar;${basedir}/WebContent/WEB-INF/lib/hibernate-validator-3.1.0.GA.jar;${basedir}/WebContent/WEB-INF/lib/itext-1.3.jar;${basedir}/WebContent/WEB-INF/lib/jakarta-oro.jar;${basedir}/WebContent/WEB-INF/lib/javassist-3.11.0.GA.jar;${basedir}/WebContent/WEB-INF/lib/javassist-3.19.0-GA.jar;${basedir}/WebContent/WEB-INF/lib/jta-1.1.jar;${basedir}/WebContent/WEB-INF/lib/log4j-1.2.9.jar;${basedir}/WebContent/WEB-INF/lib/mysql-connector-java-5.1.21.jar;${basedir}/WebContent/WEB-INF/lib/ognl-3.0.3.jar;${basedir}/WebContent/WEB-INF/lib/slf4j-api-1.7.12.jar;${basedir}/WebContent/WEB-INF/lib/struts2-core-2.3.1.jar;${basedir}/WebContent/WEB-INF/lib/struts2-dojo-plugin-2.3.1.jar;${basedir}/WebContent/WEB-INF/lib/struts2-fullhibernatecore-plugin-2.2.2-GA.jar;${basedir}/WebContent/WEB-INF/lib/xml-apis-1.0.b2.jar;${basedir}/WebContent/WEB-INF/lib/xwork-core-2.3.1.jar"/-->
+		<!-- Ounce Windows Installation Directory -->
+		<property name="ounce.installDir" 	value="C:\\Program Files (x86)\\IBM\\AppScanSource"/>
+	 
+		<!-- taskdef Ounce resource.  This is not necessary for javac integration
+		 only but is required for custom Ounce tasks like ounceCreateProject
+		 (used below to specify the web context root). -->
+	    <taskdef resource="com/ouncelabs/ounceant/task/ounce.xml" classpath="ounceant.jar"/>
+		<!-- use the Ounce ant compiler adapter so an Ounce Project is generated during the build -->
+		<property name="build.compiler" value="com.ouncelabs.ounceant.OunceCompilerAdapter"/>
+	    <!-- manually set the Project name (although the default is fine - it would be project_compile.ppf
+	         because the target is "compile" and the directory is named "project" -->
+		<property name="ounce.project_name" value="EAttendance_Ounce_Proj"/>
+	    <!-- add the Project to an application -->
+		<property name="ounce.application_name" value="EAttendance_Ounce_App"/>
+	    <!-- put the Application in the same directory -->
+		<property name="ounce.application_dir" value="C:\\AppScanWorkSpace\\WorkSpace2"/>
+		
+	<!-- ==================== Clean Target ==================================== -->
+	<!--
+	  The "clean" target deletes any previous "build" directory,
+	  so that you can be ensured the application can be built from scratch.
+	-->
+
+		<target name="clean_ounce" description="Delete old build and dist directories">  
+			<delete dir="${build.home}"/>
+			<delete file="EAttendace_Ounce_App.paf" />
+			<delete file="EAttendace_Ounce_Proj.ppf" />
+			<mkdir dir="${build.home}"/>     
 		</target>
 		
-		<target name="compile_ounce" depends="clean_ounce" description="SAST">
-	      	<ounceCreateProject name="EAttendance_Ounce_compile" workingDir="C:\\AppScanWorkSpace" >
-				<ounceSourceRoot dir="{src.home}" />		
+	<!-- ==================== Compile Target ================================== -->
+	<!--
+	  The "compile" target transforms source files (from your "src" directory)
+	  into object files in the appropriate location in the build directory.
+	-->
+
+		<target name="compile_ounce" depends="clean_ounce" description="Compile Java sources">
+		<!-- Compile Java classes as necessary -->
+			<mkdir dir="${build.home}"/>
+			<javac srcdir="${src.home}"
+				   destdir="${build.home}"  >
+			</javac>
+		  
+		<!-- Ounce specific property definition begins here.  Note that since ant's "property" task creates immutable properties we would want to use
+		 ant-contrib's "var" task instead if there was more than one project or application.  See the Ounce Utility Guide for more information -->
+			<ounceCreateProject   name="EAttendance_Ounce_Proj"  workingDir="C:\\AppScanWorkSpace\\WorkSpace2"  classpath ="${basedir}/WebContent/WEB-INF/lib/antlr-2.7.6.jar;${basedir}/WebContent/WEB-INF/lib/asm-3.3.jar;${basedir}/WebContent/WEB-INF/lib/asm-commons-3.3.jar;${basedir}/WebContent/WEB-INF/lib/asm-tree-3.3.jar;${basedir}/WebContent/WEB-INF/lib/commons-beanutils-1.7.0.jar;${basedir}/WebContent/WEB-INF/lib/commons-collections-3.1.jar;${basedir}/WebContent/WEB-INF/lib/commons-fileupload-1.2.2.jar;${basedir}/WebContent/WEB-INF/lib/commons-io-2.0.1.jar;${basedir}/WebContent/WEB-INF/lib/commons-lang-2.5.jar;${basedir}/WebContent/WEB-INF/lib/commons-logging-1.1.1.jar;${basedir}/WebContent/WEB-INF/lib/commons-logging-api-1.1.jar;${basedir}/WebContent/WEB-INF/lib/displaytag-1.2.jar;${basedir}/WebContent/WEB-INF/lib/displaytag-export-poi-1.2.jar;${basedir}/WebContent/WEB-INF/lib/displaytag-portlet-1.2.jar;${basedir}/WebContent/WEB-INF/lib/dom4j-1.6.1.jar;${basedir}/WebContent/WEB-INF/lib/ejb3-persistence.jar;${basedir}/WebContent/WEB-INF/lib/freemarker-2.3.18.jar;${basedir}/WebContent/WEB-INF/lib/hibernate-annotations.jar;${basedir}/WebContent/WEB-INF/lib/hibernate-commons-annotations-3.1.0.GA.jar;${basedir}/WebContent/WEB-INF/lib/hibernate-commons-annotations.jar;${basedir}/WebContent/WEB-INF/lib/hibernate-core-3.3.0.SP1.jar;${basedir}/WebContent/WEB-INF/lib/hibernate-jpa-2.0-api-1.0.1.Final.jar;${basedir}/WebContent/WEB-INF/lib/hibernate-validator-3.1.0.GA.jar;${basedir}/WebContent/WEB-INF/lib/itext-1.3.jar;${basedir}/WebContent/WEB-INF/lib/jakarta-oro.jar;${basedir}/WebContent/WEB-INF/lib/javassist-3.11.0.GA.jar;${basedir}/WebContent/WEB-INF/lib/javassist-3.19.0-GA.jar;${basedir}/WebContent/WEB-INF/lib/jta-1.1.jar;${basedir}/WebContent/WEB-INF/lib/log4j-1.2.9.jar;${basedir}/WebContent/WEB-INF/lib/mysql-connector-java-5.1.21.jar;${basedir}/WebContent/WEB-INF/lib/ognl-3.0.3.jar;${basedir}/WebContent/WEB-INF/lib/slf4j-api-1.7.12.jar;${basedir}/WebContent/WEB-INF/lib/struts2-core-2.3.1.jar;${basedir}/WebContent/WEB-INF/lib/struts2-dojo-plugin-2.3.1.jar;${basedir}/WebContent/WEB-INF/lib/struts2-fullhibernatecore-plugin-2.2.2-GA.jar;${basedir}/WebContent/WEB-INF/lib/xml-apis-1.0.b2.jar;${basedir}/WebContent/WEB-INF/lib/xwork-core-2.3.1.jar" >
+				<ounceSourceRoot dir="${basedir}/src" />	
 				<ounceWeb webContextRoot="${basedir}/WebContent"  analyzeStrutsFramework="true"  importStrutsValidation="true" />
-		  	</ounceCreateProject>
-			<ounceCli dir="${ounce.installDir}" script="cli_script.txt" output="cli_log.txt"/>
+			</ounceCreateProject> 
+		  
+		<!-- No need to specify any other attributes for ounceCreateProject task.
+		The javac integration will pick up the class path, source roots, etc. -->
+
+		<!-- end Ounce additions here. -->
+		<!-- Project and Application are created, run a scan with the CLI. -->
+			<ounceCli dir="${ounce.installDir}"	script="cli_script.txt"	output="cli_log.txt"/>
 		</target>
-	
-	
-	
-	
-	
-	
-	<taskdef name="wsInstallApp" classname="com.ibm.websphere.ant.tasks.InstallApplication"/>
-	
-	<property name="hostName" value="localhost" />
-	<property name="connType" value="SOAP" />
-	<property name="port" value="8880" />
-	<property name="userId" value="wasadmin" />
-	<property name="password" value="wasadmin" />
-	<property name="warDir" value="c:/temp/antbuild/dist" />
-	<property name="warFile" value="EAttendance.war" />
-	<property name="appName" value="EAttendance" />
-	<property name="wasHome.dir" value="c:/was7/appserver" />
-	
-	<!-- installation Target-->
-	<target name="deployWar">
-	<wsInstallApp 
-		ear="${warDir}/${warFile}" 
-		options="-appname ${appName} -usedefaultbindings"
-		wasHome="${wasHome.dir}" 
-		conntype="${connType}"
-		port="${port}" 
-		host="${hostName}" 
-		user="${userId}" 
-		password="${password}" />
-	</target>
 
 	
 </project>
