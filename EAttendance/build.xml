@@ -50,7 +50,7 @@
 	
 	
 	<target name="verifySASTVulnerabilityThreshold">
-		<xmltask source="C:\\AppScanWorkSpace\\WorkSpace2\\EAttendance.ozasmt">
+		<xmltask source="${SASTReportFile}">
 			<call path="AssessmentRun/AssessmentStats">
 				<param name="TotalHighSeverityIssuesSAST" path="@total_high_high_finding" default="n/a"/>
 				<actions>
@@ -154,7 +154,7 @@
 	    <!-- add the Project to an application -->
 		<property name="ounce.application_name" value="EAttendance_Ounce_App"/>
 	    <!-- put the Application in the same directory -->
-		<property name="ounce.application_dir" value="C:\\AppScanWorkSpace\\WorkSpace2"/>
+		<!--property name="ounce.application_dir" value="C:\\AppScanWorkSpace\\WorkSpace2"/-->
 		
 	<!-- ==================== Clean Target ==================================== -->
 	<!--
