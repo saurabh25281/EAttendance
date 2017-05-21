@@ -193,7 +193,7 @@
 
 		<!-- end Ounce additions here. -->
 		<!-- Project and Application are created, run a scan with the CLI. -->
-			<ounceCli dir="${ounce.installDir}"	script="cli_script.txt" output="${outputFile}"/>
+			<ounceCli dir="${ounce.installDir}"	script=".\${scriptFile}" output="${outputFile}"/>
 		</target>
 
 	
