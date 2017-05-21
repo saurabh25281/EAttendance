@@ -111,8 +111,8 @@
 	<!--pathconvert property="classpathProp" refid="compile.classpath"/-->
 
 	<target name="compile" depends="init" >
-		<echo message= "Classpath is ${classpathProp}"/>
-		<echo message= "Properties: ${build.properties}, tomcatLibrary=${tomcatLibrary}"/>
+		<!--echo message= "Classpath is ${classpathProp}"/>
+		<echo message= "Properties: ${build.properties}, tomcatLibrary=${tomcatLibrary}"/-->
 		<javac destdir="build/classes" debug="true" includeantruntime="false" srcdir="src">
 			<classpath refid="compile.classpath"/>
 		</javac>
