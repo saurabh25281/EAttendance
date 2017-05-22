@@ -18,7 +18,13 @@
 					<echo>TotalMediumSeverityIssuesDAST = @{TotalMediumSeverityIssuesDAST}</echo>
 				</actions>
 			</call>
-			<copy path="XmlReport/Summary/Hosts/Host/TotalHighSeverityIssues/text()" property="TotalHighSeverityIssuesDAST"/>
+			<call path="XmlReport/Summary/Hosts/Host/TotalLowSeverityIssues">
+				<param name="TotalLowSeverityIssuesDAST" path="text()" default="n/a"/>
+				<actions>
+					<echo>TotalLowSeverityIssuesDAST = @{TotalLowSeverityIssuesDAST}</echo>
+				</actions>
+			</call>
+			<copy path="XmlReport/Summary/Hosts/Host/TotalLowSeverityIssues/text()" property="TotalLowSeverityIssuesDAST"/>
 		</xmltask>
 	
 		<!-- returns the same results as Java's compareTo() method: -->
@@ -37,8 +43,8 @@
 		
 		<local name="compareResult" />
 		<echo>VulnerabilityThresholdDAST = ${VulnerabilityThresholdDAST}</echo>
-		<compare arg1="${TotalHighSeverityIssuesDAST}" arg2="${VulnerabilityThresholdDAST}" result="compareResult" />
-		<fail message="TotalHighSeverityIssuesDAST: ${TotalHighSeverityIssuesDAST} is greater than the Threshold Vulnerability Count: ${VulnerabilityThresholdDAST} and hence stopping the pipeline!">
+		<compare arg1="${TotalLowSeverityIssuesDAST}" arg2="${VulnerabilityThresholdDAST}" result="compareResult" />
+		<fail message="TotalLowSeverityIssuesDAST: ${TotalLowSeverityIssuesDAST} is greater than the Threshold Vulnerability Count: ${VulnerabilityThresholdDAST} and hence stopping the pipeline!">
 		    <condition>
 		        <equals arg1="${compareResult}" arg2="1" />
 		    </condition>
@@ -63,7 +69,13 @@
 					<echo>TotalMediumSeverityIssuesSAST = @{TotalMediumSeverityIssuesSAST}</echo>
 				</actions>
 			</call>
-			<copy path="AssessmentRun/AssessmentStats/@total_files" property="TotalHighSeverityIssuesSAST"/>
+			<call path="AssessmentRun/AssessmentStats">
+				<param name="TotalLowSeverityIssuesDAST" path="@total_low_high_finding" default="n/a"/>
+				<actions>
+					<echo>TotalLowSeverityIssuesDAST = @{TotalLowSeverityIssuesDAST}</echo>
+				</actions>
+			</call>
+			<copy path="AssessmentRun/AssessmentStats/@total_high_high_finding" property="TotalHighSeverityIssuesSAST"/>
 		</xmltask>
 	
 		<!-- returns the same results as Java's compareTo() method: -->
