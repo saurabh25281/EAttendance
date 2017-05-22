@@ -200,6 +200,12 @@
 		<!-- Project and Application are created, run a scan with the CLI. -->
 			<ounceCli dir="${ounce.installDir}"	script="${scriptFile}" output="${outputFile}"/>
 		</target>
+	
+	
+	
+		<target name="publish_SAST" description="Publish SAST Report">
+			<ounceCli dir="${ounce.installDir}"	script="${scriptPublishFile}" output="${outputPublishFile}"/>
+		</target>
 
 	
 </project>

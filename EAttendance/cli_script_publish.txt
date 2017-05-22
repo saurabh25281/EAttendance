@@ -1,0 +1,4 @@
+login https://acitibmsats01.solutionworks.com:9444/ase/ ACITIBMSATS01\admin1 Password@2 -acceptssl
+oaf C:\AppScanWorkSpace\WorkSpace2\EAttendance.ozasmt
+pase C:\AppScanWorkSpace\WorkSpace2\EAttendance.ozasmt -name DemoApp -aseapplication DemoApp -preventOverwrite
+exit
