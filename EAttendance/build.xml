@@ -70,9 +70,9 @@
 				</actions>
 			</call>
 			<call path="AssessmentRun/AssessmentStats">
-				<param name="TotalLowSeverityIssuesDAST" path="@total_low_high_finding" default="n/a"/>
+				<param name="TotalLowSeverityIssuesSAST" path="@total_low_high_finding" default="n/a"/>
 				<actions>
-					<echo>TotalLowSeverityIssuesDAST = @{TotalLowSeverityIssuesDAST}</echo>
+					<echo>TotalLowSeverityIssuesSAST = @{TotalLowSeverityIssuesSAST}</echo>
 				</actions>
 			</call>
 			<copy path="AssessmentRun/AssessmentStats/@total_high_high_finding" property="TotalHighSeverityIssuesSAST"/>
