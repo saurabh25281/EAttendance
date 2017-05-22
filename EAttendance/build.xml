@@ -95,7 +95,7 @@
 		
 		<local name="compareResult" />
 		<echo>VulnerabilityThresholdSAST = ${VulnerabilityThresholdSAST}</echo>
-		<compare arg1="${TotalHighSeverityIssuesSAST}" arg2="${SASTVulnerabilityThreshold}" result="compareResult" />
+		<compare arg1="${TotalHighSeverityIssuesSAST}" arg2="${VulnerabilityThresholdSAST}" result="compareResult" />
 		<fail message="TotalHighSeverityIssuesSAST: ${TotalHighSeverityIssuesSAST} is greater than the Threshold Vulnerability Count: ${VulnerabilityThresholdSAST} and hence stopping the pipeline!">
 		    <condition>
 		        <equals arg1="${compareResult}" arg2="1" />
