@@ -5,7 +5,7 @@
 	<taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask" />
 	
 	<target name="verifyDASTVulnerabilityThreshold">
-		<xmltask source="./../demo.testfire.net.xml">
+		<xmltask source="./../EAttendance.xml">
 			<call path="XmlReport/Summary/Hosts/Host/TotalHighSeverityIssues">
 				<param name="TotalHighSeverityIssuesDAST" path="text()" default="n/a"/>
 				<actions>
