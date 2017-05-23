@@ -56,7 +56,7 @@
 	
 	
 	<target name="verifySASTVulnerabilityThreshold">
-		<xmltask source="${SASTReportFile}">
+		<xmltask source="C:\\AppScanWorkSpace\\WorkSpace2\\EAttendance.ozasmt">
 			<call path="AssessmentRun/AssessmentStats">
 				<param name="TotalHighSeverityIssuesSAST" path="@total_high_high_finding" default="n/a"/>
 				<actions>
@@ -161,7 +161,7 @@
 		<property name="build.home"		value="${basedir}/bin"/>
 		<property name="src.home"		value="${basedir}/src"/>
 		<!-- Ounce Windows Installation Directory -->
-		<!--property name="ounce.installDir" 	value="C:\\Program Files (x86)\\IBM\\AppScanSource"/-->
+		<property name="ounce.installDir" 	value="C:\\Program Files (x86)\\IBM\\AppScanSource"/>
 		<!-- use the Ounce ant compiler adapter so an Ounce Project is generated during the build -->
 		<property name="build.compiler" value="com.ouncelabs.ounceant.OunceCompilerAdapter"/>
 	    <!-- manually set the Project name (although the default is fine - it would be project_compile.ppf
@@ -170,7 +170,7 @@
 	    <!-- add the Project to an application -->
 		<!--property name="ounce.application_name" value="EAttendance_Ounce_App"/-->
 	    <!-- put the Application in the same directory -->
-		<!--property name="ounce.application_dir" value="C:\\AppScanWorkSpace\\WorkSpace2"/-->
+		<property name="ounce.application_dir" value="C:\\AppScanWorkSpace\\WorkSpace2"/>
 		
 	<!-- ==================== Clean Target ==================================== -->
 	<!--
