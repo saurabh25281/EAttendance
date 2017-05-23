@@ -72,7 +72,7 @@ public class LogingEx extends ActionSupport implements SessionAware{
 	         
 	         
 	         Query query = session.createSQLQuery("SELECT "+id+","+first_name+" FROM "+selectTab+" WHERE "+login+" = :login AND password = :password");
-	        
+	         
 	         query.setParameter("login", uname);
 	         query.setParameter("password", password);
 	      //   List result = query.list();
@@ -94,12 +94,22 @@ public class LogingEx extends ActionSupport implements SessionAware{
 	        	 ret = SUCCESS;
 	          }
 	       } catch (Exception e) {
-	    	   e.printStackTrace();
+	    	   //e.printStackTrace();
+	    	   String genericUserMessage = searchExceptions(e);
+	           logException(genericUserMessage);
 	          ret = ERROR;
 	       } 
 	       return ret;
 	       
 	    }
+	
+	public String searchExceptions(Exception e) {
+		return "generic User Message";
+	}
+	
+	public void logException(String str) {
+		//log error messages
+	}
 
 	private String uname,password,utype;
  

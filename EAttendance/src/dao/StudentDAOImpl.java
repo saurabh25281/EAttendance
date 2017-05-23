@@ -19,6 +19,14 @@ public class StudentDAOImpl implements StudentDAO {
 	Session session =null;
 	Transaction transaction=null;
 	
+	public String searchExceptions(Exception e) {
+		return "generic User Message";
+	}
+	
+	public void logException(String str) {
+		//log error messages
+	}
+	
 	@Override
 	public void saveOrUpdateStudent(Student student) {
 		Session session = sessionFactory.openSession();
@@ -29,7 +37,9 @@ public class StudentDAOImpl implements StudentDAO {
 		    tx.commit();  
 		 }catch (HibernateException e) {
 	         if (tx!=null) tx.rollback();
-	         e.printStackTrace(); 
+	         //e.printStackTrace();
+	         String genericUserMessage = searchExceptions(e);
+		     logException(genericUserMessage);
 	      }finally {
 	         session.close(); 
 	      }
@@ -50,7 +60,9 @@ public class StudentDAOImpl implements StudentDAO {
 			
 	      }catch (HibernateException e) {
 	          if (tx!=null) tx.rollback();
-	          e.printStackTrace(); 
+	          //e.printStackTrace();
+	          String genericUserMessage = searchExceptions(e);
+			     logException(genericUserMessage);
 	       }finally {
 	          session.close(); 
 	       }
@@ -69,7 +81,9 @@ public class StudentDAOImpl implements StudentDAO {
 	         tx.commit();
 		} catch (HibernateException e) {
 	         if (tx!=null) tx.rollback();
-	         e.printStackTrace(); 
+	         //e.printStackTrace();
+	         String genericUserMessage = searchExceptions(e);
+		     logException(genericUserMessage);
 	      }finally {
 	         session.close(); 
 	      }
@@ -94,7 +108,9 @@ public class StudentDAOImpl implements StudentDAO {
 				 tx.commit();
 			}catch (HibernateException e) {
 		         if (tx!=null) tx.rollback();
-		         e.printStackTrace(); 
+		         //e.printStackTrace();
+		         String genericUserMessage = searchExceptions(e);
+			     logException(genericUserMessage);
 		      }finally {
 		         session.close(); 
 		      }
@@ -115,7 +131,9 @@ public class StudentDAOImpl implements StudentDAO {
 				 tx.commit();
 			}catch (HibernateException e) {
 		         if (tx!=null) tx.rollback();
-		         e.printStackTrace(); 
+		         //e.printStackTrace();
+		         String genericUserMessage = searchExceptions(e);
+			     logException(genericUserMessage);
 		      }finally {
 		         session.close(); 
 		      }
@@ -136,7 +154,9 @@ public class StudentDAOImpl implements StudentDAO {
 				 tx.commit();
 			}catch (HibernateException e) {
 		         if (tx!=null) tx.rollback();
-		         e.printStackTrace(); 
+		         //e.printStackTrace();
+		         String genericUserMessage = searchExceptions(e);
+			     logException(genericUserMessage);
 		      }finally {
 		         session.close(); 
 		      }
@@ -157,7 +177,9 @@ public class StudentDAOImpl implements StudentDAO {
 				 tx.commit();
 			}catch (HibernateException e) {
 		         if (tx!=null) tx.rollback();
-		         e.printStackTrace(); 
+		         //e.printStackTrace();
+		         String genericUserMessage = searchExceptions(e);
+			     logException(genericUserMessage);
 		      }finally {
 		         session.close(); 
 		      }

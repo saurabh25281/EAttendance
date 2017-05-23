@@ -18,7 +18,13 @@ public class CourseDAOImpl implements CourseDAO{
     Session session =null;
 	Transaction transaction=null;
 	  	
+	public String searchExceptions(Exception e) {
+		return "generic User Message";
+	}
 	
+	public void logException(String str) {
+		//log error messages
+	}
 	 
 	    
 	  
@@ -32,7 +38,9 @@ public class CourseDAOImpl implements CourseDAO{
 		    tx.commit();  
 		 }catch (HibernateException e) {
 	         if (tx!=null) tx.rollback();
-	         e.printStackTrace(); 
+	         //e.printStackTrace();
+	         String genericUserMessage = searchExceptions(e);
+		     logException(genericUserMessage);
 	      }finally {
 	         session.close(); 
 	      }
@@ -53,7 +61,9 @@ public class CourseDAOImpl implements CourseDAO{
 				 tx.commit();
 			}catch (HibernateException e) {
 		         if (tx!=null) tx.rollback();
-		         e.printStackTrace(); 
+		         //e.printStackTrace();
+		         String genericUserMessage = searchExceptions(e);
+			     logException(genericUserMessage);
 		      }finally {
 		         session.close(); 
 		      }
@@ -72,7 +82,9 @@ public class CourseDAOImpl implements CourseDAO{
 	         tx.commit();
 		} catch (HibernateException e) {
 	         if (tx!=null) tx.rollback();
-	         e.printStackTrace(); 
+	         //e.printStackTrace();
+	         String genericUserMessage = searchExceptions(e);
+		     logException(genericUserMessage);
 	      }finally {
 	         session.close(); 
 	      }
@@ -94,7 +106,9 @@ public class CourseDAOImpl implements CourseDAO{
 			
 	      }catch (HibernateException e) {
 	          if (tx!=null) tx.rollback();
-	          e.printStackTrace(); 
+	          //e.printStackTrace();
+	          String genericUserMessage = searchExceptions(e);
+			     logException(genericUserMessage);
 	       }finally {
 	          session.close(); 
 	       }

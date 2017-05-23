@@ -26,6 +26,14 @@ public class MarkAttendacneDAOImpl implements MarkAttendacneDAO {
 	Session session =null;
 	Transaction transaction=null;
 	
+	public String searchExceptions(Exception e) {
+		return "generic User Message";
+	}
+	
+	public void logException(String str) {
+		//log error messages
+	}
+	
 	
 	@SuppressWarnings("unchecked")
 	@Override
@@ -41,7 +49,9 @@ public class MarkAttendacneDAOImpl implements MarkAttendacneDAO {
 				 tx.commit();
 			}catch (HibernateException e) {
 		         if (tx!=null) tx.rollback();
-		         e.printStackTrace(); 
+		         //e.printStackTrace();
+		         String genericUserMessage = searchExceptions(e);
+			     logException(genericUserMessage);
 		      }finally {
 		         session.close(); 
 		      }
@@ -62,7 +72,9 @@ public class MarkAttendacneDAOImpl implements MarkAttendacneDAO {
 				 tx.commit();
 			}catch (HibernateException e) {
 		         if (tx!=null) tx.rollback();
-		         e.printStackTrace(); 
+		         //e.printStackTrace();
+		         String genericUserMessage = searchExceptions(e);
+			        logException(genericUserMessage);
 		      }finally {
 		         session.close(); 
 		      }
@@ -83,7 +95,9 @@ public class MarkAttendacneDAOImpl implements MarkAttendacneDAO {
 				 tx.commit();
 			}catch (HibernateException e) {
 		         if (tx!=null) tx.rollback();
-		         e.printStackTrace(); 
+		         //e.printStackTrace();
+		         String genericUserMessage = searchExceptions(e);
+			        logException(genericUserMessage);
 		      }finally {
 		         session.close(); 
 		      }
@@ -106,7 +120,9 @@ public class MarkAttendacneDAOImpl implements MarkAttendacneDAO {
 				 tx.commit();
 			}catch (HibernateException e) {
 		         if (tx!=null) tx.rollback();
-		         e.printStackTrace(); 
+		         //e.printStackTrace();
+		         String genericUserMessage = searchExceptions(e);
+			        logException(genericUserMessage);
 		      }finally {
 		         session.close(); 
 		      }
@@ -132,7 +148,9 @@ public class MarkAttendacneDAOImpl implements MarkAttendacneDAO {
 				 tx.commit();
 			}catch (HibernateException e) {
 		         if (tx!=null) tx.rollback();
-		         e.printStackTrace(); 
+		         //e.printStackTrace();
+		         String genericUserMessage = searchExceptions(e);
+			        logException(genericUserMessage);
 		      }finally {
 		         session.close(); 
 		      }
@@ -153,7 +171,9 @@ public class MarkAttendacneDAOImpl implements MarkAttendacneDAO {
 				 tx.commit();
 			}catch (HibernateException e) {
 		         if (tx!=null) tx.rollback();
-		         e.printStackTrace(); 
+		         //e.printStackTrace();
+		         String genericUserMessage = searchExceptions(e);
+			        logException(genericUserMessage);
 		      }finally {
 		         session.close(); 
 		      }
@@ -176,7 +196,9 @@ public class MarkAttendacneDAOImpl implements MarkAttendacneDAO {
 				 tx.commit();
 			}catch (HibernateException e) {
 		         if (tx!=null) tx.rollback();
-		         e.printStackTrace(); 
+		         //e.printStackTrace();
+		         String genericUserMessage = searchExceptions(e);
+			        logException(genericUserMessage);
 		      }finally {
 		         session.close(); 
 		      }
@@ -197,7 +219,9 @@ public class MarkAttendacneDAOImpl implements MarkAttendacneDAO {
 				 tx.commit();
 			}catch (HibernateException e) {
 		         if (tx!=null) tx.rollback();
-		         e.printStackTrace(); 
+		         //e.printStackTrace();
+		         String genericUserMessage = searchExceptions(e);
+			        logException(genericUserMessage);
 		      }finally {
 		         session.close(); 
 		      }
@@ -227,7 +251,9 @@ public class MarkAttendacneDAOImpl implements MarkAttendacneDAO {
 		    tx.commit();  
 		 }catch (HibernateException e) {
 	         if (tx!=null) tx.rollback();
-	         e.printStackTrace(); 
+	         //e.printStackTrace();
+	         String genericUserMessage = searchExceptions(e);
+		        logException(genericUserMessage);
 	      }finally {
 	         session.close(); 
 	      }
