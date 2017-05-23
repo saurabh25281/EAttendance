@@ -164,7 +164,11 @@ public class MarkAttendacneAction  extends ActionSupport implements SessionAware
 		attDetails.setTeacher_id(Integer.parseInt(sessionMap.get("uid").toString()));
 		
 		attDetails.setYear_id(Integer.parseInt(year_id));
-		}catch(Exception ex){ex.printStackTrace();}
+		}catch(Exception ex){
+			//ex.printStackTrace();
+			String genericUserMessage = searchExceptions(ex);
+	        logException(genericUserMessage);
+			}
 		Set<StudentAttendance> studentAttendance = new HashSet<StudentAttendance>();
 		//StudentAttendance saObj = new StudentAttendance();
 		
@@ -201,6 +205,13 @@ public class MarkAttendacneAction  extends ActionSupport implements SessionAware
 		return SUCCESS;
 	}
 	
+	public String searchExceptions(Exception e) {
+		return "generic User Message";
+	}
+	
+	public void logException(String str) {
+		//log error messages
+	}
 	
 	public String getCourse_id() {
 		return course_id;
