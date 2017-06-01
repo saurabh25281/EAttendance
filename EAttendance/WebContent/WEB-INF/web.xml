@@ -20,8 +20,14 @@
 			<http-method>OPTIONS</http-method>
 			<http-method>DELETE</http-method>
 		</web-resource-collection>
-	<auth-constraint />
+		<user-data-constraint>
+			<description>Ensure to allow only confidential communication</description>
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint>
+	<!-- auth-constraint /-->
+	
 </security-constraint>
+
 <welcome-file-list>
 <welcome-file>index.jsp</welcome-file>
 </welcome-file-list>
